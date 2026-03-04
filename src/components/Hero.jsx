@@ -5,7 +5,7 @@ const Hero = () => {
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[--soft-cream] via-white to-blue-50"></div>
-      
+
       {/* Elegant Pattern Overlay */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -25,19 +25,19 @@ const Hero = () => {
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            I'm Precious Osuji, a final-year Computer Science student with a 3.8 GPA. 
+            I'm Precious Osuji, a final-year Computer Science student with a 3.8 GPA.
             I need your support to complete my degree and pursue my dream of becoming a software engineer.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <button 
+            <button
               onClick={() => document.getElementById('donate').scrollIntoView({ behavior: 'smooth' })}
               className="btn-primary text-lg px-8 py-4"
             >
               Support My Education
             </button>
-            <button 
+            <button
               onClick={() => document.getElementById('introduction').scrollIntoView({ behavior: 'smooth' })}
               className="btn-secondary text-lg px-8 py-4"
             >
@@ -48,7 +48,7 @@ const Hero = () => {
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">$4,500</div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">$50,000</div>
               <div className="text-gray-600">Goal Amount</div>
             </div>
             <div className="text-center">
@@ -56,7 +56,7 @@ const Hero = () => {
               <div className="text-gray-600">Current GPA</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">2 Months</div>
+              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">1 Months</div>
               <div className="text-gray-600">To Graduation</div>
             </div>
           </div>
