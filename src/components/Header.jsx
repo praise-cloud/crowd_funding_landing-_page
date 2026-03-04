@@ -1,0 +1,112 @@
+import React, { useState, useEffect } from 'react';
+import { useScrollTo } from '../hooks/useScrollTo';
+
+const Header = ({ onContributeClick }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { scrollToSection } = useScrollTo();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleNavClick = (sectionId) => {
+    // Close mobile menu if open
+    setIsMobileMenuOpen(false);
+    
+    // Smooth scroll to section with React Router hash navigation
+    scrollToSection(sectionId);
+  };
+
+  const navigationItems = [
+    { label: 'About', section: 'introduction' },
+    { label: 'Funding', section: 'funding' },
+    { label: 'Milestones', section: 'milestones' },
+    { label: 'Transparency', section: 'transparency' },
+    { label: 'Donate', section: 'donate' }
+  ];
+
+  return (
+    <header 
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4">
+          {/* Logo */}
+          <div className="flex items-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+              <span className="text-white font-bold text-lg">P</span>
+            </div>
+            <div className="ml-3">
+              <h1 className="font-serif font-semibold text-lg text-gray-900">Precious Osuji</h1>
+              <p className="text-sm text-gray-600">Academic Completion Fund</p>
+            </div>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {navigationItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => handleNavClick(item.section)}
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
+
+          {/* Contribute Button */}
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={onContributeClick}
+              className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Contribute Now
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className={`md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+          <nav className="py-4 space-y-2">
+            {navigationItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => handleNavClick(item.section)}
+                className="block w-full text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg font-medium transition-colors duration-200"
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
