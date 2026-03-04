@@ -174,3 +174,23 @@ The React application is now complete with:
 ---
 *Completed: March 4, 2026*
 *Version: React Router v6 - Production Ready*
+## Recent Engineering Updates - March 4, 2026
+
+### Critical Build Fixes Completed
+- Added Vite root entry file: `index.html` at project root with `<script type="module" src="/src/main.jsx">`
+- Added missing runtime dependency: `react-router-dom`
+- Added missing stylesheet file: `src/App.css`
+  - Added shared classes used by components (`btn-*`, `card`, modal, form, helper classes)
+  - Added design CSS variables used across sections (`--soft-cream`, `--primary-dark`, `--secondary-dark`)
+
+### Tailwind CSS Fixes Completed
+- Resolved Tailwind version mismatch by aligning to Tailwind v3 setup used in the codebase
+- Updated `package.json` dev dependency:
+  - `tailwindcss` -> `^3.4.17`
+- Removed duplicate/invalid PostCSS config file: `postcss.config.js`
+- Kept canonical PostCSS config in `postcss.config.cjs`
+- Fixed CSS import order in `src/index.css` by moving Google Fonts `@import` to the top
+
+### Validation
+- Production build succeeds with Vite after critical fixes
+- Tailwind/PostCSS pipeline is now configured to process existing `@tailwind base/components/utilities` directives

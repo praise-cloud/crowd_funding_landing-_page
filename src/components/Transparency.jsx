@@ -93,7 +93,7 @@ const Transparency = () => {
               My Commitment to You
             </h3>
             <p className="text-gray-700 max-w-3xl mx-auto mb-6">
-              As someone who has received support throughout my academic journey, I understand the importance of transparency and accountability. 
+              As someone who has received support throughout my academic journey, I understand the importance of transparency and accountability.
               Your trust in me means everything, and I will honor that trust by providing complete visibility into how your contributions are used.
             </p>
             <div className="inline-flex items-center px-6 py-3 bg-white rounded-full shadow-sm border">
@@ -117,7 +117,7 @@ const Transparency = () => {
                 </span>
                 <div>
                   <div className="font-medium text-gray-900">Email</div>
-                  <div className="text-sm text-gray-600">precious@example.com</div>
+                  <div className="text-sm text-gray-600">qosuji13@gmail.com</div>
                 </div>
               </div>
               <div className="flex items-center">
@@ -126,7 +126,7 @@ const Transparency = () => {
                 </span>
                 <div>
                   <div className="font-medium text-gray-900">Phone</div>
-                  <div className="text-sm text-gray-600">+1 (555) 123-4567</div>
+                  <div className="text-sm text-gray-600">+234 813 449 </div>
                 </div>
               </div>
               <div className="flex items-center">
