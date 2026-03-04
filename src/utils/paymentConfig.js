@@ -4,10 +4,13 @@ export const paymentConfig = {
   greyUsdUrl: "https://grey.co",
   sponsorshipEmail: "precious@example.com",
   greyAccountDetails: {
-    accountName: "Precious Osuji",
-    accountNumber: "1234567890",
-    bankName: "Grey Digital Bank",
-    swiftCode: "GREYUS33"
+    accountName: "precious chiamaka osuji",
+    accountNumber: "218627357074",
+    wireRouting: "101019644",
+    achRouting: "101019644",
+    accountType: "Checking",
+    bankName: "View bank name in Grey app",
+    address: "1801 Main St., Kansas City, MO 64108"
   },
   paypalAmounts: [
     { value: 50, label: "$50" },

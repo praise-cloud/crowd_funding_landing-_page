@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
 import { useFileUpload } from '../../hooks/useFileUpload';
-import { copyToClipboard } from '../../utils/paymentConfig';
+import { copyToClipboard, paymentConfig } from '../../utils/paymentConfig';
 
 const GreyUsdModal = ({ isOpen, onClose, onSuccess }) => {
   const [isCopying, setIsCopying] = useState(false);
   const { file, preview, error, isUploading, handleFileChange, removeFile, uploadFile } = useFileUpload();
 
-  const accountDetails = {
-    accountName: "Precious Osuji",
-    accountNumber: "1234567890",
-    bankName: "Grey Digital Bank",
-    swiftCode: "GREYUS33"
-  };
+  const accountDetails = paymentConfig.greyAccountDetails;
 
   const handleCopyDetails = async () => {
     setIsCopying(true);
     const details = `${accountDetails.accountName}
 Account Number: ${accountDetails.accountNumber}
+Wire Routing: ${accountDetails.wireRouting}
+ACH Routing: ${accountDetails.achRouting}
+Account Type: ${accountDetails.accountType}
 Bank Name: ${accountDetails.bankName}
-SWIFT Code: ${accountDetails.swiftCode}`;
-    
+Address: ${accountDetails.address}`;
+
     const result = await copyToClipboard(details);
-    
+
     if (result.success) {
       setTimeout(() => setIsCopying(false), 2000);
     } else {
@@ -37,7 +35,7 @@ SWIFT Code: ${accountDetails.swiftCode}`;
 
     // Simulate upload process
     onClose();
-    
+
     // Show success message
     setTimeout(() => {
       onSuccess('Your Grey USD payment has been submitted successfully! We will review your receipt and confirm within 24 hours.');
@@ -48,8 +46,8 @@ SWIFT Code: ${accountDetails.swiftCode}`;
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
-      <div 
-        className="modal-content animate-scale-in" 
+      <div
+        className="modal-content animate-scale-in"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="text-center mb-6">
@@ -59,7 +57,7 @@ SWIFT Code: ${accountDetails.swiftCode}`;
           <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-2">Grey USD Transfer</h3>
           <p className="text-gray-600">Complete your donation via bank transfer</p>
         </div>
-        
+
         <div className="space-y-6">
           {/* Account Details */}
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
@@ -78,26 +76,38 @@ SWIFT Code: ${accountDetails.swiftCode}`;
                 <span className="font-mono text-sm font-semibold">{accountDetails.bankName}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-600">SWIFT Code:</span>
-                <span className="font-mono text-sm font-semibold">{accountDetails.swiftCode}</span>
+                <span className="text-gray-600">Wire Routing:</span>
+                <span className="font-mono text-sm font-semibold">{accountDetails.wireRouting}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">ACH Routing:</span>
+                <span className="font-mono text-sm font-semibold">{accountDetails.achRouting}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">Account Type:</span>
+                <span className="font-mono text-sm font-semibold">{accountDetails.accountType}</span>
+              </div>
+              <div className="flex justify-between items-start gap-4">
+                <span className="text-gray-600">Address:</span>
+                <span className="font-mono text-sm font-semibold text-right">{accountDetails.address}</span>
               </div>
             </div>
-            <button 
+            <button
               onClick={handleCopyDetails}
               className={`w-full mt-4 py-2 rounded-xl text-sm font-medium transition-colors ${
-                isCopying 
-                  ? 'bg-green-600 text-white' 
+                isCopying
+                  ? 'bg-green-600 text-white'
                   : 'bg-blue-600 text-white hover:bg-blue-700'
               }`}
             >
               {isCopying ? '✓ Copied!' : '📋 Copy Account Details'}
             </button>
           </div>
-          
+
           {/* File Upload */}
           <div>
             <label className="form-label">Upload Payment Receipt</label>
-            <div 
+            <div
               className={`file-upload ${error ? 'border-red-300 bg-red-50' : ''}`}
               onClick={() => document.getElementById('receipt-upload').click()}
             >
@@ -106,26 +116,26 @@ SWIFT Code: ${accountDetails.swiftCode}`;
               </div>
               <p className="text-gray-600 mb-2">Click to upload receipt</p>
               <p className="text-sm text-gray-500">PNG, JPG, PDF up to 5MB</p>
-              <input 
-                type="file" 
-                id="receipt-upload" 
+              <input
+                type="file"
+                id="receipt-upload"
                 accept=".png,.jpg,.jpeg,.pdf"
-                className="hidden" 
+                className="hidden"
                 onChange={handleFileChange}
               />
             </div>
-            
+
             {error && (
               <div className="error-message mt-2">
                 {error}
               </div>
             )}
-            
+
             {preview && (
               <div className="mt-3">
                 <div className="bg-green-50 border border-green-200 rounded-xl p-3 flex items-center justify-between">
                   <span className="text-green-800 text-sm">{preview}</span>
-                  <button 
+                  <button
                     onClick={removeFile}
                     className="text-green-600 hover:text-green-800 font-bold"
                   >
@@ -135,16 +145,16 @@ SWIFT Code: ${accountDetails.swiftCode}`;
               </div>
             )}
           </div>
-          
+
           {/* Action Buttons */}
           <div className="flex gap-3">
-            <button 
+            <button
               onClick={onClose}
               className="btn-secondary flex-1"
             >
               Cancel
             </button>
-            <button 
+            <button
               onClick={handleSubmit}
               disabled={!file || isUploading}
               className="btn-primary flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
