@@ -2,7 +2,8 @@
 export const paymentConfig = {
   paypalUrl: "https://www.paypal.com/donate",
   greyUsdUrl: "https://grey.co",
-  sponsorshipEmail: "precious@example.com",
+  sponsorshipEmail: "qosuji13@gmail.com",
+  campaignDeadline: "2026-03-29T23:59:59",
   greyAccountDetails: {
     accountName: "precious chiamaka osuji",
     accountNumber: "218627357074",
@@ -69,3 +70,13 @@ export const generatePayPalUrl = (amount) => {
   });
   return `${baseUrl}?${params.toString()}`;
 };
+
+export const getCampaignDeadline = () => new Date(paymentConfig.campaignDeadline);
+
+export const getDaysRemaining = () => {
+  const now = new Date();
+  const diffMs = getCampaignDeadline().getTime() - now.getTime();
+  return Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
+};
+
+export const isCampaignClosed = () => new Date().getTime() > getCampaignDeadline().getTime();

@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from 'react';
-
-const CAMPAIGN_DEADLINE = new Date('2026-03-29T23:59:59');
-
-const getDaysRemaining = () => {
-  const now = new Date();
-  const diffMs = CAMPAIGN_DEADLINE.getTime() - now.getTime();
-  return Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
-};
+import { getDaysRemaining, isCampaignClosed } from '../utils/paymentConfig';
 
 const Funding = () => {
   const [daysRemaining, setDaysRemaining] = useState(getDaysRemaining);
+  const [campaignClosed, setCampaignClosed] = useState(isCampaignClosed);
 
   useEffect(() => {
     setDaysRemaining(getDaysRemaining());
+    setCampaignClosed(isCampaignClosed());
     const intervalId = setInterval(() => {
       setDaysRemaining(getDaysRemaining());
+      setCampaignClosed(isCampaignClosed());
     }, 1000 * 60 * 60);
 
     return () => clearInterval(intervalId);
@@ -83,8 +79,8 @@ const Funding = () => {
                   <div className="text-sm text-gray-600">Donors</div>
                 </div>
                 <div className="text-center p-4 bg-purple-50 rounded-xl border border-purple-200">
-                  <div className="text-2xl font-bold text-purple-600">{daysRemaining}</div>
-                  <div className="text-sm text-gray-600">Days Left</div>
+                  <div className="text-2xl font-bold text-purple-600">{campaignClosed ? 'Closed' : daysRemaining}</div>
+                  <div className="text-sm text-gray-600">{campaignClosed ? 'Campaign Status' : 'Days Left'}</div>
                 </div>
               </div>
             </div>

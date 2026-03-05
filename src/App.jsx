@@ -7,6 +7,7 @@ import ScrollToTop from './components/ScrollToTop';
 import GreyUsdModal from './components/modals/GreyUsdModal';
 import PayPalModal from './components/modals/PayPalModal';
 import SuccessModal from './components/modals/SuccessModal';
+import { paymentConfig } from './utils/paymentConfig';
 import './App.css';
 
 function App() {
@@ -21,7 +22,11 @@ function App() {
   };
 
   const handleSponsorClick = () => {
-    window.location.href = "mailto:precious@example.com";
+    const subject = encodeURIComponent('Direct Sponsorship Support');
+    const body = encodeURIComponent(
+      'Hello,\n\nI would like to sponsor your academic journey. Please share sponsorship options and next steps.\n\nThank you.'
+    );
+    window.location.href = `mailto:${paymentConfig.sponsorshipEmail}?subject=${subject}&body=${body}`;
   };
 
   const handleSuccess = (message) => {
