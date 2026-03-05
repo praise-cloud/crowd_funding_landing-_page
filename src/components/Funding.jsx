@@ -21,18 +21,18 @@ const Funding = () => {
   const progressPercentage = (currentAmount / totalGoal) * 100;
 
   return (
-    <section id="funding" className="py-32 bg-gradient-to-br from-[--soft-cream] to-white">
+    <section id="funding" className="py-20 md:py-28 bg-gradient-to-br from-[--soft-cream] to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Funding <span className="gradient-text">Breakdown</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
             Every dollar contributes directly to my academic completion. Here's exactly how your support will be used.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
           <div className="space-y-8">
             <div className="card">
               <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-6">Funding Progress</h3>
@@ -54,7 +54,7 @@ const Funding = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="text-center p-4 bg-blue-50 rounded-xl border border-blue-200">
                   <div className="text-2xl font-bold text-blue-600">{Math.round(progressPercentage)}%</div>
                   <div className="text-sm text-gray-600">Funded</div>
@@ -70,7 +70,7 @@ const Funding = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-6 border border-orange-200">
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-5 sm:p-6 border border-orange-200">
               <div className="flex items-center mb-3">
                 <span className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-3">
                   <span className="text-white text-sm">??</span>
@@ -84,7 +84,7 @@ const Funding = () => {
           </div>
 
           <div className="space-y-6">
-            <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-6">How Funds Will Be Used</h3>
+            <h3 className="font-serif text-xl sm:text-2xl font-semibold text-gray-900 mb-6">How Funds Will Be Used</h3>
 
             {fundingBreakdown.map((item) => (
               <div key={item.category} className="card hover:shadow-lg transition-shadow duration-300">
@@ -121,7 +121,7 @@ const Funding = () => {
           </div>
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl p-8 border border-green-200">
+        <div className="mt-12 md:mt-16 bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl p-6 md:p-8 border border-green-200">
           <div className="text-center">
             <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-4">Your Impact Goes Beyond Numbers</h3>
             <p className="text-gray-700 max-w-3xl mx-auto mb-6">

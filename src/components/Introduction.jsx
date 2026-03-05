@@ -2,21 +2,21 @@ import React from 'react';
 
 const Introduction = () => {
   return (
-    <section id="introduction" className="py-32 bg-gradient-to-br from-white to-[--soft-cream]">
+    <section id="introduction" className="py-20 md:py-28 bg-gradient-to-br from-white to-[--soft-cream]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             About <span className="gradient-text">My Journey</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
             From humble beginnings to academic excellence, this is my story of perseverance, dedication, and the pursuit of knowledge.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Image/Visual */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl p-8 h-96 flex items-center justify-center">
+            <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl p-6 sm:p-8 h-80 sm:h-96 flex items-center justify-center">
               <div className="text-center">
                 <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-4xl text-white">🎓</span>
@@ -54,20 +54,20 @@ const Introduction = () => {
             </div>
 
             {/* Key Statistics */}
-            <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center border border-blue-200">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-4 sm:p-6 text-center border border-blue-200">
                 <div className="text-3xl font-bold text-blue-600 mb-2">3.8</div>
                 <div className="text-sm text-gray-600 font-medium">Current GPA</div>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 text-center border border-green-200">
+              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-4 sm:p-6 text-center border border-green-200">
                 <div className="text-3xl font-bold text-green-600 mb-2">2</div>
                 <div className="text-sm text-gray-600 font-medium">Months to Graduation</div>
               </div>
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 text-center border border-purple-200">
+              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-4 sm:p-6 text-center border border-purple-200">
                 <div className="text-3xl font-bold text-purple-600 mb-2">4</div>
                 <div className="text-sm text-gray-600 font-medium">Years of Study</div>
               </div>
-              <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 text-center border border-orange-200">
+              <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-4 sm:p-6 text-center border border-orange-200">
                 <div className="text-3xl font-bold text-orange-600 mb-2">A</div>
                 <div className="text-sm text-gray-600 font-medium">Grade Average</div>
               </div>

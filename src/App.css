@@ -141,3 +141,23 @@
 .animate-scale-in {
   animation: scale-in 0.2s ease-out;
 }
+
+@media (max-width: 640px) {
+  .card {
+    border-radius: 0.875rem;
+    padding: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-success {
+    min-height: 44px;
+    width: 100%;
+  }
+
+  .modal-content {
+    border-radius: 0.875rem;
+    max-height: 92vh;
+    padding: 1rem;
+  }
+}

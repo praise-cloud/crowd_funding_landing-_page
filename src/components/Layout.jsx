@@ -24,7 +24,7 @@ const Layout = ({ onPayPalClick, onGreyClick, onSponsorClick, handleSuccess }) =
       <Header onContributeClick={handleContributeClick} />
       
       {/* Main Content */}
-      <main>
+      <main className="pt-20 sm:pt-24">
         <Outlet context={{ onPayPalClick, onGreyClick, onSponsorClick, handleSuccess }} />
       </main>
 

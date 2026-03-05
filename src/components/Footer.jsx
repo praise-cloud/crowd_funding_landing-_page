@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-[--primary-dark] to-[--secondary-dark] text-white py-16">
+    <footer className="bg-gradient-to-br from-[--primary-dark] to-[--secondary-dark] text-white py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
@@ -114,7 +114,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 my-8"></div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="mb-4 md:mb-0">
             <p className="text-gray-300 text-sm">
               © 2024 Precious Osuji. All rights reserved.
@@ -124,7 +124,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 w-full md:w-auto justify-between md:justify-start">
             <div className="text-right">
               <div className="text-xs text-gray-400">Last Updated</div>
               <div className="text-sm text-gray-300">March 4, 2024</div>

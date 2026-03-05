@@ -23,6 +23,11 @@ const Header = ({ onContributeClick }) => {
     scrollToSection(sectionId);
   };
 
+  const handleContributeFromMenu = () => {
+    setIsMobileMenuOpen(false);
+    onContributeClick();
+  };
+
   const navigationItems = [
     { label: 'About', section: 'introduction' },
     { label: 'Funding', section: 'funding' },
@@ -40,15 +45,15 @@ const Header = ({ onContributeClick }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-3 sm:py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-lg">P</span>
+            <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+              <span className="text-white font-bold text-base sm:text-lg">P</span>
             </div>
             <div className="ml-3">
-              <h1 className="font-serif font-semibold text-lg text-gray-900">Precious Osuji</h1>
-              <p className="text-sm text-gray-600">Academic Completion Fund</p>
+              <h1 className="font-serif font-semibold text-base sm:text-lg text-gray-900">Precious Osuji</h1>
+              <p className="hidden sm:block text-sm text-gray-600">Academic Completion Fund</p>
             </div>
           </div>
 
@@ -69,7 +74,7 @@ const Header = ({ onContributeClick }) => {
           <div className="flex items-center space-x-4">
             <button
               onClick={onContributeClick}
-              className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              className="hidden sm:inline-flex bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
             >
               Contribute Now
             </button>
@@ -77,6 +82,8 @@ const Header = ({ onContributeClick }) => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              type="button"
+              aria-label="Toggle navigation menu"
               className="md:hidden p-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,7 +98,7 @@ const Header = ({ onContributeClick }) => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+        <div className={`md:hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-96 opacity-100 py-2' : 'max-h-0 opacity-0'} overflow-hidden`}>
           <nav className="py-4 space-y-2">
             {navigationItems.map((item) => (
               <button
@@ -102,6 +109,12 @@ const Header = ({ onContributeClick }) => {
                 {item.label}
               </button>
             ))}
+            <button
+              onClick={handleContributeFromMenu}
+              className="block w-full text-left px-4 py-3 bg-blue-600 text-white rounded-lg font-medium transition-colors duration-200 hover:bg-blue-700"
+            >
+              Contribute Now
+            </button>
           </nav>
         </div>
       </div>

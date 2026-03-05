@@ -56,18 +56,18 @@ const Transparency = () => {
   };
 
   return (
-    <section id="transparency" className="py-32 bg-gradient-to-br from-white to-[--soft-cream]">
+    <section id="transparency" className="py-20 md:py-28 bg-gradient-to-br from-white to-[--soft-cream]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Complete <span className="gradient-text">Transparency</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
             I believe in complete openness with my supporters. Here's how I'll keep you informed every step of the way.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
           {transparencyItems.map((item, index) => (
             <div key={index} className={`card hover:shadow-xl transition-all duration-300 ${colorClasses[item.color].bg} ${colorClasses[item.color].border} border-2`}>
               <div className="flex items-start space-x-4">
@@ -84,7 +84,7 @@ const Transparency = () => {
         </div>
 
         {/* Commitment Statement */}
-        <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-3xl p-8 border border-blue-200 mb-12">
+        <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-3xl p-6 md:p-8 border border-blue-200 mb-12">
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <span className="text-2xl text-white">🤝</span>

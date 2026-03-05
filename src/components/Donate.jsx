@@ -2,19 +2,19 @@ import React from 'react';
 
 const Donate = ({ onPayPalClick, onGreyClick, onSponsorClick }) => {
   return (
-    <section id="donate" className="py-32 bg-gradient-to-br from-white to-[--soft-cream]">
+    <section id="donate" className="py-20 md:py-28 bg-gradient-to-br from-white to-[--soft-cream]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Support My <span className="gradient-text">Academic Journey</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
             Your contribution will directly support my final semester tuition, examination fees, and graduation requirements. 
             Every donation brings me closer to achieving my dream.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {/* PayPal Donation */}
           <div className="card text-center group hover:scale-105 transition-transform duration-300">
             <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
@@ -81,7 +81,7 @@ const Donate = ({ onPayPalClick, onGreyClick, onSponsorClick }) => {
         </div>
 
         {/* Impact Statement */}
-        <div className="mt-12 bg-gradient-to-r from-blue-50 to-green-50 rounded-3xl p-8 border border-blue-100">
+        <div className="mt-12 bg-gradient-to-r from-blue-50 to-green-50 rounded-3xl p-6 md:p-8 border border-blue-100">
           <div className="text-center">
             <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-4">
               Your Impact
