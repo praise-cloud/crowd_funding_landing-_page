@@ -6,7 +6,7 @@ const PayPalModal = ({ isOpen, onClose, onSuccess }) => {
   const [selectedAmount, setSelectedAmount] = useState(null);
   const [customAmount, setCustomAmount] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const clientId = (import.meta.env.VITE_PAYPAL_CLIENT_ID || '').trim();
+  const clientId = (import.meta.env.VITE_PAYPAL_CLIENT_ID || paymentConfig.paypalClientId || '').trim();
   const currency = import.meta.env.VITE_PAYPAL_CURRENCY || 'USD';
   const intent = import.meta.env.VITE_PAYPAL_INTENT || 'capture';
 

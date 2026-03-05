@@ -1,5 +1,6 @@
 // Payment configuration constants
 export const paymentConfig = {
+  paypalClientId: "AX4gOlYkd_7121cPUTgPgK3hyHJoYQZP7KanKQBz50XQSojyAKFSwWVHxfgqi5mIpsRTCTWZU6s2w4vE",
   paypalUrl: "https://www.paypal.com/donate",
   greyUsdUrl: "https://grey.co",
   sponsorshipEmail: "qosuji13@gmail.com",
