@@ -6,42 +6,42 @@ const Milestones = () => {
       year: '2021',
       title: 'Started University Journey',
       description: 'Began Computer Science program with determination and passion for technology.',
-      icon: '??',
+      icon: '\u{1F393}',
       status: 'completed'
     },
     {
       year: '2022',
       title: 'Academic Excellence',
       description: "Achieved 3.8 GPA and joined the Dean's List for outstanding academic performance.",
-      icon: '?',
+      icon: '\u2B50',
       status: 'completed'
     },
     {
       year: '2023',
       title: 'Internship & Projects',
       description: 'Completed software development internship and built multiple real-world applications.',
-      icon: '??',
+      icon: '\u{1F4BB}',
       status: 'completed'
     },
     {
       year: '2024',
       title: 'Final Year Challenges',
       description: 'Facing financial constraints that threaten to delay graduation.',
-      icon: '?',
+      icon: '\u26A1',
       status: 'current'
     },
     {
       year: '2024',
       title: 'Graduation Goal',
       description: 'Complete final semester and graduate with Computer Science degree.',
-      icon: '??',
+      icon: '\u{1F3AF}',
       status: 'pending'
     },
     {
       year: '2025',
       title: 'Future Impact',
       description: 'Begin career as software engineer and give back to the community.',
-      icon: '??',
+      icon: '\u{1F680}',
       status: 'pending'
     }
   ];
@@ -125,7 +125,7 @@ const Milestones = () => {
         <div className="mt-12 md:mt-16 bg-gradient-to-r from-blue-50 to-green-50 rounded-3xl p-6 md:p-8 border border-blue-200">
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-              <span className="text-2xl text-white">??</span>
+              <span className="text-2xl text-white">{'\u{1F3AF}'}</span>
             </div>
             <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-4">The Final Hurdle</h3>
             <p className="text-gray-700 max-w-3xl mx-auto mb-6">
@@ -134,7 +134,7 @@ const Milestones = () => {
             </p>
             <div className="flex justify-center">
               <div className="inline-flex items-center px-4 sm:px-6 py-3 bg-white rounded-full shadow-sm border text-center">
-                <span className="text-blue-600 mr-2">??</span>
+                <span className="text-blue-600 mr-2">{'\u{1F4AA}'}</span>
                 <span className="text-gray-700 font-medium">Your support can make this dream a reality</span>
               </div>
             </div>
