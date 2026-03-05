@@ -1,6 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+const CAMPAIGN_DEADLINE = new Date('2026-03-29T23:59:59');
+
+const getDaysRemaining = () => {
+  const now = new Date();
+  const diffMs = CAMPAIGN_DEADLINE.getTime() - now.getTime();
+  return Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
+};
 
 const Funding = () => {
+  const [daysRemaining, setDaysRemaining] = useState(getDaysRemaining);
+
+  useEffect(() => {
+    setDaysRemaining(getDaysRemaining());
+    const intervalId = setInterval(() => {
+      setDaysRemaining(getDaysRemaining());
+    }, 1000 * 60 * 60);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   const fundingItems = [
     { category: 'Final Semester Tuition', amount: 18000, icon: '🎓' },
     { category: 'Accommodation', amount: 14000, icon: '📝' },
@@ -64,7 +83,7 @@ const Funding = () => {
                   <div className="text-sm text-gray-600">Donors</div>
                 </div>
                 <div className="text-center p-4 bg-purple-50 rounded-xl border border-purple-200">
-                  <div className="text-2xl font-bold text-purple-600">24</div>
+                  <div className="text-2xl font-bold text-purple-600">{daysRemaining}</div>
                   <div className="text-sm text-gray-600">Days Left</div>
                 </div>
               </div>

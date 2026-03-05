@@ -9,7 +9,7 @@ export const paymentConfig = {
     wireRouting: "101019644",
     achRouting: "101019644",
     accountType: "Checking",
-    bankName: "View bank name in Grey app",
+    bankName: "lead Bank",
     address: "1801 Main St., Kansas City, MO 64108"
   },
   paypalAmounts: [
