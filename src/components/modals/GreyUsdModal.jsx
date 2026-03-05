@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useFileUpload } from '../../hooks/useFileUpload';
-import { copyToClipboard, paymentConfig } from '../../utils/paymentConfig';
+import { copyToClipboard, isCampaignClosed, paymentConfig } from '../../utils/paymentConfig';
 
 const GreyUsdModal = ({ isOpen, onClose, onSuccess }) => {
   const [isCopying, setIsCopying] = useState(false);
   const { file, preview, error, isUploading, handleFileChange, removeFile, uploadFile } = useFileUpload();
+  const campaignClosed = isCampaignClosed();
 
   const accountDetails = paymentConfig.greyAccountDetails;
 
@@ -28,6 +29,11 @@ Address: ${accountDetails.address}`;
   };
 
   const handleSubmit = async () => {
+    if (campaignClosed) {
+      alert('The donation period has closed. Grey USD payments are no longer available.');
+      return;
+    }
+
     if (!file) {
       alert('Please upload your payment receipt');
       return;
@@ -156,12 +162,17 @@ Address: ${accountDetails.address}`;
             </button>
             <button
               onClick={handleSubmit}
-              disabled={!file || isUploading}
+              disabled={campaignClosed || !file || isUploading}
               className="btn-primary flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isUploading ? 'Uploading...' : 'Submit Payment'}
+              {campaignClosed ? 'Campaign Closed' : isUploading ? 'Uploading...' : 'Submit Payment'}
             </button>
           </div>
+          {campaignClosed && (
+            <p className="text-sm text-red-600 text-center">
+              The donation period has closed. Grey USD payments are no longer available.
+            </p>
+          )}
         </div>
       </div>
     </div>

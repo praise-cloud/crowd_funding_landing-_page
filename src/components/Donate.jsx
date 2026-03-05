@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { isCampaignClosed } from '../utils/paymentConfig';
 
 const Donate = ({ onPayPalClick, onGreyClick, onSponsorClick }) => {
+  const [campaignClosed, setCampaignClosed] = useState(isCampaignClosed);
+
+  useEffect(() => {
+    setCampaignClosed(isCampaignClosed());
+    const intervalId = setInterval(() => {
+      setCampaignClosed(isCampaignClosed());
+    }, 1000 * 60 * 60);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <section id="donate" className="py-20 md:py-28 bg-gradient-to-br from-white to-[--soft-cream]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,9 +39,10 @@ const Donate = ({ onPayPalClick, onGreyClick, onSponsorClick }) => {
             </p>
             <button 
               onClick={onPayPalClick}
-              className="btn-primary w-full"
+              disabled={campaignClosed}
+              className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Donate with PayPal
+              {campaignClosed ? 'Campaign Closed' : 'Donate with PayPal'}
             </button>
           </div>
 
@@ -45,9 +58,10 @@ const Donate = ({ onPayPalClick, onGreyClick, onSponsorClick }) => {
             </p>
             <button 
               onClick={onGreyClick}
-              className="btn-primary w-full"
+              disabled={campaignClosed}
+              className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Transfer with Grey
+              {campaignClosed ? 'Campaign Closed' : 'Transfer with Grey'}
             </button>
           </div>
 
@@ -69,6 +83,14 @@ const Donate = ({ onPayPalClick, onGreyClick, onSponsorClick }) => {
             </button>
           </div>
         </div>
+
+        {campaignClosed && (
+          <div className="mt-6 text-center">
+            <p className="text-sm text-red-600 font-medium">
+              The donation window has closed. PayPal and Grey payments are no longer available.
+            </p>
+          </div>
+        )}
 
         {/* Security Notice */}
         <div className="mt-16 text-center">

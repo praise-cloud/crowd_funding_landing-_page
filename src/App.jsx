@@ -7,17 +7,25 @@ import ScrollToTop from './components/ScrollToTop';
 import GreyUsdModal from './components/modals/GreyUsdModal';
 import PayPalModal from './components/modals/PayPalModal';
 import SuccessModal from './components/modals/SuccessModal';
-import { paymentConfig } from './utils/paymentConfig';
+import { isCampaignClosed, paymentConfig } from './utils/paymentConfig';
 import './App.css';
 
 function App() {
   const { modals, openModal, closeModal } = useModals();
 
   const handlePayPalClick = () => {
+    if (isCampaignClosed()) {
+      alert('The donation period has closed. PayPal payments are no longer available.');
+      return;
+    }
     openModal('paypal');
   };
 
   const handleGreyClick = () => {
+    if (isCampaignClosed()) {
+      alert('The donation period has closed. Grey USD payments are no longer available.');
+      return;
+    }
     openModal('greyUsd');
   };
 

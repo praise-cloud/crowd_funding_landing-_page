@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js';
-import { paymentConfig } from '../../utils/paymentConfig';
+import { isCampaignClosed, paymentConfig } from '../../utils/paymentConfig';
 
 const PayPalModal = ({ isOpen, onClose, onSuccess }) => {
   const [selectedAmount, setSelectedAmount] = useState(null);
@@ -24,6 +24,7 @@ const PayPalModal = ({ isOpen, onClose, onSuccess }) => {
 
   const donationAmount = Number(customAmount || selectedAmount || 50);
   const isAmountInvalid = !Number.isFinite(donationAmount) || donationAmount <= 0;
+  const campaignClosed = isCampaignClosed();
 
   if (!isOpen) return null;
 
@@ -75,7 +76,11 @@ const PayPalModal = ({ isOpen, onClose, onSuccess }) => {
               <p className="text-gray-600 mb-4">Complete payment with PayPal</p>
             </div>
 
-            {!clientId ? (
+            {campaignClosed ? (
+              <p className="text-sm text-red-600">
+                The donation period has closed. PayPal payments are no longer available.
+              </p>
+            ) : !clientId ? (
               <p className="text-sm text-red-600">
                 PayPal is not configured. Add `VITE_PAYPAL_CLIENT_ID` to your `.env` file.
               </p>
