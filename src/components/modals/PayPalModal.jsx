@@ -1,51 +1,41 @@
 import React, { useState } from 'react';
-import { paymentConfig, generatePayPalUrl } from '../../utils/paymentConfig';
+import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js';
+import { paymentConfig } from '../../utils/paymentConfig';
 
 const PayPalModal = ({ isOpen, onClose, onSuccess }) => {
   const [selectedAmount, setSelectedAmount] = useState(null);
   const [customAmount, setCustomAmount] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const clientId = import.meta.env.VITE_PAYPAL_CLIENT_ID;
 
   const handleAmountSelect = (amount) => {
     setSelectedAmount(amount);
     setCustomAmount('');
+    setErrorMessage('');
   };
 
   const handleCustomAmountChange = (e) => {
     setCustomAmount(e.target.value);
     setSelectedAmount(null);
+    setErrorMessage('');
   };
 
-  const handleContinue = () => {
-    const amount = customAmount || selectedAmount || 50;
-    
-    // Close modal and open PayPal
-    onClose();
-    window.open(generatePayPalUrl(amount), '_blank');
-    
-    // Show success message after delay
-    setTimeout(() => {
-      onSuccess('You will be redirected to PayPal to complete your donation. Thank you for your support!');
-    }, 1000);
-  };
+  const donationAmount = Number(customAmount || selectedAmount || 50);
 
   if (!isOpen) return null;
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
-      <div 
-        className="modal-content animate-scale-in" 
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className="modal-content animate-scale-in" onClick={(e) => e.stopPropagation()}>
         <div className="text-center mb-6">
           <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <span className="text-2xl text-white">💳</span>
+            <span className="text-2xl text-white">PP</span>
           </div>
           <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-2">Donate via PayPal</h3>
           <p className="text-gray-600">Secure payment processing</p>
         </div>
-        
+
         <div className="space-y-6">
-          {/* Amount Selection */}
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
             <h4 className="font-semibold text-gray-900 mb-4">Choose Your Donation Amount</h4>
             <div className="grid grid-cols-2 gap-3 mb-4">
@@ -65,8 +55,8 @@ const PayPalModal = ({ isOpen, onClose, onSuccess }) => {
             </div>
             <div className="flex items-center gap-3">
               <span className="text-gray-600 font-medium">$</span>
-              <input 
-                type="number" 
+              <input
+                type="number"
                 placeholder="Custom amount"
                 value={customAmount}
                 onChange={handleCustomAmountChange}
@@ -76,30 +66,56 @@ const PayPalModal = ({ isOpen, onClose, onSuccess }) => {
               />
             </div>
           </div>
-          
-          {/* PayPal Button */}
+
           <div className="bg-gray-50 rounded-2xl p-6 text-center">
             <div className="mb-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-blue-600 font-bold text-lg">PP</span>
-              </div>
-              <p className="text-gray-600 mb-4">Click below to proceed with PayPal</p>
+              <p className="text-gray-600 mb-4">Complete payment with PayPal</p>
             </div>
-            <button 
-              onClick={handleContinue}
-              className="btn-primary w-full flex items-center justify-center gap-3"
-            >
-              <span>🔗</span>
-              Continue with PayPal
-            </button>
+
+            {!clientId ? (
+              <p className="text-sm text-red-600">
+                PayPal is not configured. Add `VITE_PAYPAL_CLIENT_ID` to your `.env` file.
+              </p>
+            ) : (
+              <PayPalScriptProvider
+                options={{
+                  'client-id': clientId,
+                  currency: 'USD',
+                  intent: 'capture'
+                }}
+              >
+                <PayPalButtons
+                  style={{ layout: 'vertical', shape: 'rect', label: 'paypal' }}
+                  forceReRender={[donationAmount]}
+                  createOrder={(_, actions) =>
+                    actions.order.create({
+                      purchase_units: [
+                        {
+                          amount: {
+                            currency_code: 'USD',
+                            value: donationAmount.toFixed(2)
+                          }
+                        }
+                      ]
+                    })
+                  }
+                  onApprove={async (_, actions) => {
+                    const capture = await actions.order.capture();
+                    const donorName = capture?.payer?.name?.given_name || 'Supporter';
+                    onClose();
+                    onSuccess(`Thank you, ${donorName}. Your PayPal donation was completed successfully.`);
+                  }}
+                  onError={() => {
+                    setErrorMessage('Unable to process PayPal payment right now. Please try again.');
+                  }}
+                />
+              </PayPalScriptProvider>
+            )}
+            {errorMessage && <p className="text-sm text-red-600 mt-3">{errorMessage}</p>}
           </div>
-          
-          {/* Cancel Button */}
+
           <div className="text-center">
-            <button 
-              onClick={onClose}
-              className="py-3 px-6 text-gray-600 hover:text-gray-800 transition-colors"
-            >
+            <button onClick={onClose} className="py-3 px-6 text-gray-600 hover:text-gray-800 transition-colors">
               Cancel
             </button>
           </div>
