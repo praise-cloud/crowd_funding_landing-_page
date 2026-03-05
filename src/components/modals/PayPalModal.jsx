@@ -7,6 +7,8 @@ const PayPalModal = ({ isOpen, onClose, onSuccess }) => {
   const [customAmount, setCustomAmount] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const clientId = import.meta.env.VITE_PAYPAL_CLIENT_ID;
+  const currency = import.meta.env.VITE_PAYPAL_CURRENCY || 'USD';
+  const intent = import.meta.env.VITE_PAYPAL_INTENT || 'capture';
 
   const handleAmountSelect = (amount) => {
     setSelectedAmount(amount);
@@ -21,6 +23,7 @@ const PayPalModal = ({ isOpen, onClose, onSuccess }) => {
   };
 
   const donationAmount = Number(customAmount || selectedAmount || 50);
+  const isAmountInvalid = !Number.isFinite(donationAmount) || donationAmount <= 0;
 
   if (!isOpen) return null;
 
@@ -76,12 +79,15 @@ const PayPalModal = ({ isOpen, onClose, onSuccess }) => {
               <p className="text-sm text-red-600">
                 PayPal is not configured. Add `VITE_PAYPAL_CLIENT_ID` to your `.env` file.
               </p>
+            ) : isAmountInvalid ? (
+              <p className="text-sm text-red-600">Please enter a valid donation amount greater than $0.</p>
             ) : (
               <PayPalScriptProvider
                 options={{
                   'client-id': clientId,
-                  currency: 'USD',
-                  intent: 'capture'
+                  currency,
+                  intent,
+                  components: 'buttons'
                 }}
               >
                 <PayPalButtons
