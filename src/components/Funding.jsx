@@ -32,7 +32,7 @@ const Funding = () => {
     percentage: (item.amount / totalGoal) * 100
   }));
 
-  const currentAmount = 250;
+  const currentAmount = 1000;
   const progressPercentage = (currentAmount / totalGoal) * 100;
 
   return (
