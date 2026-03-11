@@ -1,7 +1,7 @@
 # React Conversion Design Specification - COMPLETED
 
 ## Project Overview
-Rebranded the original academic fundraising landing page into a pediatric care fundraising website for children facing critical illness. The React app now focuses on urgent medical support, transparent funding, and multiple donation paths.
+Professional child relief organization website with bold typography, full-screen imagery, and cinematic motion. The React app centers on emergency care, protection programs, and measurable impact.
 
 ## Current State - COMPLETED
 
@@ -22,33 +22,30 @@ Rebranded the original academic fundraising landing page into a pediatric care f
 - Copy functionality: One-click copy of account details with visual feedback
 - Form validation: Real-time error handling and user feedback
 
-### Sticky Navigation - COMPLETED
-- Fixed positioning that sticks to top on scroll
-- Scroll detection with dynamic styling changes
-- Background blur effects with backdrop-filter
-- Mobile-responsive hamburger menu
-- Smooth transitions on scroll state changes
-- Call-to-action button with smooth scroll to donate section
+### Navigation System - UPDATED
+- Floating center navigation bar on desktop
+- Mobile nav collapses to icon-only buttons
+- Mobile toggle reveals text labels when expanded
+- Navigation mapped to Mission, Funding, Programs, Impact, Donate
 
-## Rebrand Changes (March 11, 2026)
+## Layout Updates (March 11, 2026)
 
-### Content Direction
-- Updated all copy to focus on urgent pediatric care fundraising
-- Replaced academic milestones with a campaign timeline
-- Updated funding breakdown to medical care categories
-- Emphasized transparency, family privacy, and partner clinic oversight
-- Added clear donor impact statements aligned to medical support
+### Section Replacements
+- Replaced timeline section with Programs (direct services)
+- Replaced transparency section with Impact (metrics + full-bleed image)
 
 ### Visual System
-- Primary accents shifted to rose and orange gradients
-- Typography updated to Fraunces (headings) and Manrope (body)
-- Hero section rebuilt with a two-column layout and image from `src/assets`
-- Buttons, gradients, and section highlights updated to new palette
+- Bold typography scale for headings across sections
+- Full-screen and full-bleed image layouts
+- Cinematic overlays and image motion
+- Accent palette in rose/orange gradients
+- Fraunces headings and Manrope body text
 
-### Accessibility & Tone
-- Maintained clear, human-readable language
-- Avoided urgent or harmful medical claims
-- Focused on donor support, transparency, and family dignity
+### Motion & Interaction
+- Scroll reveal animations for section elements
+- Micro-interactions on cards and buttons
+- Slow cinematic image zoom for immersive visuals
+- Reduced motion support via `prefers-reduced-motion`
 
 ## Final Architecture
 
@@ -66,46 +63,15 @@ Rebranded the original academic fundraising landing page into a pediatric care f
 ```
 
 ### Navigation System
-- Hash-based routing: `#introduction`, `#funding`, `#milestones`, `#transparency`, `#donate`
+- Hash-based routing: `#introduction`, `#funding`, `#programs`, `#impact`, `#donate`
 - Smooth scrolling with the useScrollTo hook
 - URL management without reloads
 - Scroll restoration with ScrollToTop
 
-### Modal System
-- useModal hook for centralized modal state
-- useFileUpload hook for validation and preview
-- Modal animations with scale and opacity
-
-## Key Features Implemented
-
-### 1. React Router Navigation
-```javascript
-const scrollToSection = useCallback((sectionId) => {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    window.history.pushState(null, null, `#${sectionId}`);
-  }
-}, []);
-```
-
-### 2. Modal Functionality
-- Grey USD Modal: Account details, file upload, submit flow
-- PayPal Modal: Amount selection, custom input, PayPal buttons
-- Success Modal: Confirmation messages with CTA
-- ESC key to close modals
-- Click-outside-to-close behavior
-
-### 3. Sticky Header
-- Dynamic styling based on scroll position
-- Fixed positioning with backdrop blur
-- Mobile navigation with collapse/expand
-- Smooth transitions for all state changes
-
-### 4. Donation Flow
-- PayPal integration via modal
-- Grey USD transfer modal with receipt upload
-- Direct sponsorship via mailto
+### Motion System
+- `useScrollReveal` hook for intersection-based reveals
+- `.reveal` and `.is-visible` classes for smooth section entry
+- `.micro-float` and `.cinematic-zoom` for ambient motion
 
 ## Technical Implementation
 
@@ -123,66 +89,27 @@ src/
 ¦   +-- Hero.jsx
 ¦   +-- Introduction.jsx
 ¦   +-- Funding.jsx
-¦   +-- Milestones.jsx
-¦   +-- Transparency.jsx
+¦   +-- Programs.jsx
+¦   +-- Impact.jsx
 ¦   +-- Donate.jsx
 ¦   +-- Footer.jsx
 +-- hooks/
 ¦   +-- useModal.js
 ¦   +-- useFileUpload.js
-¦   +-- useScrollTo.js
+¦   +-- useScrollReveal.js
 +-- utils/
 ¦   +-- paymentConfig.js
 +-- App.jsx
 ```
 
-### Navigation Flow
-1. Header navigation triggers handleNavClick()
-2. useScrollTo hook handles smooth scrolling
-3. URL hash updates without reload
-4. ScrollToTop manages route changes
-5. Sections scroll into view smoothly
-
-### Modal Flow
-1. Payment buttons trigger modal opening
-2. Modal state managed through useModal hook
-3. User interactions handled with validation
-4. Success modals shown after completion
-5. Modal animations provide smooth user experience
-
-## Testing Notes
-
-### React Router
-- Smooth scrolling between sections
-- URL hash updates correctly
-- Browser back/forward buttons work
-- Mobile navigation functional
-- Sticky header responds to scroll
-
-### Modals
-- Grey USD modal opens with account details
-- File upload validation works (5MB limit, file types)
-- PayPal modal amount selection functional
-- Success modals display properly
-- Keyboard navigation (ESC key) works
-- Click-outside-to-close functional
-
-### Responsive Behavior
-- Mobile navigation menu collapses/expands
-- Sticky header adapts to screen size
-- Modal layouts responsive on all devices
-- Text and elements scale appropriately
-
 ## Final Status: PRODUCTION READY
 
-The React application is now complete with:
-- React Router navigation
-- Modal popups for Grey USD and PayPal payments
-- Sticky navigation bar with smooth scrolling
-- All sections and components implemented
-- Responsive design across all devices
-- Donation flow fully working
-- Updated design system and campaign copy
+The React application now delivers:
+- Professional, bold brand presentation
+- Full-screen image experiences
+- Smooth scroll reveals and cinematic motion
+- Floating center navigation with mobile icon toggle
+- Updated Programs and Impact sections
 
 Completed: March 11, 2026
-Version: Pediatric Care Fundraising Rebrand
+Version: Professional Child Relief Organization Layout

@@ -1,18 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Hope Harbor">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#3B82F6"/>
-      <stop offset="100%" stop-color="#2563EB"/>
+    <linearGradient id="hh-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#f97316" />
     </linearGradient>
   </defs>
-  <rect x="6" y="6" width="52" height="52" rx="12" fill="url(#g)"/>
-  <text
-    x="32"
-    y="41"
-    text-anchor="middle"
-    font-family="Inter, Segoe UI, Arial, sans-serif"
-    font-size="33"
-    font-weight="700"
-    fill="#ffffff"
-  >P</text>
+  <rect width="64" height="64" rx="16" fill="url(#hh-gradient)" />
+  <path d="M20 18h6v12h12V18h6v28h-6V36H26v10h-6V18z" fill="#ffffff" />
 </svg>

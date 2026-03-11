@@ -38,24 +38,22 @@ const Funding = () => {
   const progressPercentage = (currentAmount / totalGoal) * 100;
 
   return (
-    <section id="funding" className="py-20 md:py-28 bg-gradient-to-br from-[--soft-cream] to-white">
+    <section id="funding" className="py-24 md:py-32 bg-[--soft-cream]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16 reveal" data-reveal>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Funding <span className="gradient-text">Breakdown</span>
+        <div className="text-center mb-14 md:mb-20 reveal" data-reveal>
+          <div className="text-sm uppercase tracking-[0.2em] text-rose-500 font-semibold">Funding Plan</div>
+          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mt-3">
+            Bold, Transparent Use of Every Dollar
           </h2>
-          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            Every dollar moves quickly toward urgent care, recovery support, and emergency reserves for children in crisis.
-          </p>
-          <p className="text-sm text-gray-500 mt-3">
-            Figures shown represent the current funding plan and target coverage for the next 90 days.
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mt-6">
+            Every contribution fuels urgent care, recovery support, and emergency reserves for children in crisis.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
           <div className="space-y-8">
             <div className="card reveal" data-reveal>
-              <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-6">Funding Progress</h3>
+              <h3 className="font-serif text-2xl font-bold text-gray-900 mb-6">Funding Progress</h3>
 
               <div className="mb-6">
                 <div className="flex justify-between items-center mb-2">
@@ -76,15 +74,15 @@ const Funding = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="text-center p-4 bg-rose-50 rounded-xl border border-rose-200 hover-lift">
-                  <div className="text-2xl font-bold text-rose-600">{Math.round(progressPercentage)}%</div>
+                  <div className="text-2xl font-extrabold text-rose-600">{Math.round(progressPercentage)}%</div>
                   <div className="text-sm text-gray-600">Funded</div>
                 </div>
                 <div className="text-center p-4 bg-green-50 rounded-xl border border-green-200 hover-lift">
-                  <div className="text-2xl font-bold text-green-600">{Math.floor(currentAmount / 75)}</div>
+                  <div className="text-2xl font-extrabold text-green-600">{Math.floor(currentAmount / 75)}</div>
                   <div className="text-sm text-gray-600">Care Gifts</div>
                 </div>
                 <div className="text-center p-4 bg-orange-50 rounded-xl border border-orange-200 hover-lift">
-                  <div className="text-2xl font-bold text-orange-600">{campaignClosed ? 'Closed' : daysRemaining}</div>
+                  <div className="text-2xl font-extrabold text-orange-600">{campaignClosed ? 'Closed' : daysRemaining}</div>
                   <div className="text-sm text-gray-600">{campaignClosed ? 'Campaign Status' : 'Days Left'}</div>
                 </div>
               </div>
@@ -104,7 +102,7 @@ const Funding = () => {
           </div>
 
           <div className="space-y-6">
-            <h3 className="font-serif text-xl sm:text-2xl font-semibold text-gray-900 mb-6 reveal" data-reveal>
+            <h3 className="font-serif text-2xl font-bold text-gray-900 mb-6 reveal" data-reveal>
               How Funds Will Be Used
             </h3>
 
@@ -135,46 +133,48 @@ const Funding = () => {
                   <p className="text-orange-100 text-sm">90-day pediatric care coverage</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold">${totalGoal.toLocaleString()}</div>
+                  <div className="text-3xl font-extrabold">${totalGoal.toLocaleString()}</div>
                   <div className="text-orange-100 text-sm">USD</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="mt-12 md:mt-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { label: 'Emergency Response', image: careImageOne },
-              { label: 'Family Support', image: careImageTwo },
-              { label: 'Clinic Partnership', image: careImageThree }
-            ].map((item, index) => (
-              <div
-                key={item.label}
-                className="relative overflow-hidden rounded-3xl shadow-xl border border-rose-100 reveal"
-                data-reveal
-                data-reveal-delay={120 + index * 120}
-              >
-                <img
-                  src={item.image}
-                  alt={`${item.label} in action`}
-                  className="w-full h-56 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-slate-900/20 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <div className="text-sm uppercase tracking-wider text-white/70">{item.label}</div>
-                  <div className="text-lg font-semibold">Every gift helps us respond faster</div>
-                </div>
+      <div className="mt-14 md:mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+          {[
+            { label: 'Emergency Response', image: careImageOne },
+            { label: 'Family Support', image: careImageTwo },
+            { label: 'Clinic Partnership', image: careImageThree }
+          ].map((item, index) => (
+            <div
+              key={item.label}
+              className="relative overflow-hidden h-[55vh] min-h-[360px] reveal"
+              data-reveal
+              data-reveal-delay={120 + index * 120}
+            >
+              <img
+                src={item.image}
+                alt={`${item.label} in action`}
+                className="w-full h-full object-cover cinematic-zoom"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/20 to-transparent"></div>
+              <div className="absolute bottom-8 left-8 right-8 text-white">
+                <div className="text-xs uppercase tracking-[0.2em] text-white/70">{item.label}</div>
+                <div className="text-2xl font-bold mt-3">Every gift helps us respond faster</div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
+      </div>
 
-        <div className="mt-12 md:mt-16 bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 border border-green-200 reveal" data-reveal>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14 md:mt-20">
+        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-6 md:p-10 border border-green-200 reveal" data-reveal>
           <div className="text-center">
-            <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-4">Your Impact Goes Beyond Numbers</h3>
-            <p className="text-gray-700 max-w-3xl mx-auto mb-6">
+            <h3 className="font-serif text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Your Impact Goes Beyond Numbers</h3>
+            <p className="text-gray-700 max-w-3xl mx-auto mb-6 text-lg">
               Your contribution supports rapid diagnosis, treatment, and recovery for children who need urgent care,
               while easing the burden on families during the hardest moments.
             </p>

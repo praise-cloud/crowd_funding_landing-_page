@@ -5,57 +5,57 @@ const Milestones = () => {
     {
       year: '2026',
       title: 'Organization Launch',
-      description: `Hope Harbor Children's Aid activates rapid response protocols for children in crisis.`,
+      description: 'Hope Harbor Children\'s Aid activates rapid response protocols for children in crisis.',
       icon: '\u{1F680}',
       status: 'completed'
     },
     {
       year: '2026',
       title: 'Emergency Care Funding',
-      description: `Immediate funding deployed for diagnostics, medications, and surgery support.`,
+      description: 'Immediate funding deployed for diagnostics, medications, and surgery support.',
       icon: '\u2695',
       status: 'completed'
     },
     {
       year: '2026',
       title: 'Family Recovery Support',
-      description: `Expanded lodging, nutrition, and counseling coverage for families in crisis.`,
+      description: 'Expanded lodging, nutrition, and counseling coverage for families in crisis.',
       icon: '\u{1F9E1}',
       status: 'current'
     },
     {
       year: '2026',
       title: 'Care Access Scale-Up',
-      description: `Increase clinic capacity and reduce wait times for critical procedures.`,
+      description: 'Increase clinic capacity and reduce wait times for critical procedures.',
       icon: '\u{1F4AA}',
       status: 'pending'
     },
     {
       year: '2027',
       title: 'Regional Care Network',
-      description: `Sustain a wider care network across hospitals and partner clinics.`,
+      description: 'Sustain a wider care network across hospitals and partner clinics.',
       icon: '\u{1F4CD}',
       status: 'pending'
     }
   ];
 
   return (
-    <section id="milestones" className="py-20 md:py-28 bg-gradient-to-br from-[--soft-cream] to-white">
+    <section id="milestones" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16 reveal" data-reveal>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Organization <span className="gradient-text">Timeline</span>
+        <div className="text-center mb-14 md:mb-20 reveal" data-reveal>
+          <div className="text-sm uppercase tracking-[0.2em] text-rose-500 font-semibold">Our Journey</div>
+          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mt-3">
+            A Bold Timeline of Relief
           </h2>
-          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            A clear path from immediate relief to sustainable long-term care for children in need.
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mt-6">
+            Clear milestones from immediate response to sustained care networks for children in need.
           </p>
         </div>
 
         <div className="relative pl-8 md:pl-0">
-          {/* Timeline line: left on mobile, centered on desktop */}
           <div className="absolute left-3 top-0 h-full w-1 bg-gradient-to-b from-rose-200 to-orange-200 md:left-1/2 md:-translate-x-1/2"></div>
 
-          <div className="space-y-8 md:space-y-12">
+          <div className="space-y-10 md:space-y-14">
             {milestones.map((milestone, index) => (
               <div
                 key={milestone.title}
@@ -72,11 +72,11 @@ const Milestones = () => {
                     <div className="flex items-center mb-4">
                       <span className="text-3xl mr-3">{milestone.icon}</span>
                       <div className="flex-1">
-                        <h3 className="font-serif text-lg sm:text-xl font-semibold text-gray-900">{milestone.title}</h3>
+                        <h3 className="font-serif text-xl sm:text-2xl font-bold text-gray-900">{milestone.title}</h3>
                         <span className="text-sm text-gray-500">{milestone.year}</span>
                       </div>
                     </div>
-                    <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
+                    <p className="text-gray-600 leading-relaxed text-lg">{milestone.description}</p>
 
                     <div className="mt-4">
                       {milestone.status === 'completed' && (
@@ -117,13 +117,13 @@ const Milestones = () => {
           </div>
         </div>
 
-        <div className="mt-12 md:mt-16 bg-gradient-to-r from-rose-50 to-orange-50 rounded-3xl p-6 md:p-8 border border-rose-200 reveal" data-reveal>
+        <div className="mt-14 md:mt-20 bg-gradient-to-r from-rose-50 to-orange-50 rounded-3xl p-8 md:p-12 border border-rose-200 reveal" data-reveal>
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-br from-rose-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
               <span className="text-2xl text-white">{'\u2764'}</span>
             </div>
-            <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-4">The Critical Window</h3>
-            <p className="text-gray-700 max-w-3xl mx-auto mb-6">
+            <h3 className="font-serif text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">The Critical Window</h3>
+            <p className="text-gray-700 max-w-3xl mx-auto mb-6 text-lg">
               The next 90 days are vital for children awaiting urgent treatment. Every hour saved improves outcomes
               and helps families move from crisis to recovery.
             </p>

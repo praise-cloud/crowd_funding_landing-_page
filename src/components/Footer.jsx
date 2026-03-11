@@ -5,7 +5,6 @@ const Footer = () => {
     <footer className="bg-gradient-to-br from-[--primary-dark] to-[--secondary-dark] text-white py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* About */}
           <div>
             <div className="flex items-center mb-4">
               <div className="w-10 h-10 bg-gradient-to-br from-rose-500 to-orange-500 rounded-xl flex items-center justify-center mr-3">
@@ -21,7 +20,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="font-serif font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -31,24 +29,23 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#funding" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Funding Breakdown
+                <a href="#approach" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  Our Approach
                 </a>
               </li>
               <li>
-                <a href="#milestones" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Organization Timeline
+                <a href="#programs" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  Programs
                 </a>
               </li>
               <li>
-                <a href="#transparency" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Transparency
+                <a href="#impact" className="text-gray-300 hover:text-white transition-colors text-sm">
+                  Impact
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Support Methods */}
           <div>
             <h3 className="font-serif font-semibold text-lg mb-4">Support Methods</h3>
             <ul className="space-y-2">
@@ -75,7 +72,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h3 className="font-serif font-semibold text-lg mb-4">Get in Touch</h3>
             <div className="space-y-3">
@@ -99,7 +95,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Social Proof */}
             <div className="mt-6">
               <div className="text-xs text-gray-400 mb-2">Response Time</div>
               <div className="inline-flex items-center px-3 py-1 bg-green-900/30 rounded-full text-green-300 text-xs">
@@ -110,10 +105,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="border-t border-gray-700 my-8"></div>
 
-        {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="mb-4 md:mb-0">
             <p className="text-gray-300 text-sm">
@@ -140,7 +133,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Trust Indicators */}
         <div className="mt-8 pt-6 border-t border-gray-700">
           <div className="flex flex-wrap justify-center items-center gap-4 text-xs text-gray-400">
             <div className="flex items-center">

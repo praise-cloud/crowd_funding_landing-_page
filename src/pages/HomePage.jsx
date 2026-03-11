@@ -1,42 +1,36 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import Introduction from '../components/Introduction';
-import Funding from '../components/Funding';
-import Milestones from '../components/Milestones';
-import Transparency from '../components/Transparency';
+import Approach from '../components/Approach';
+import Programs from '../components/Programs';
+import Impact from '../components/Impact';
 import Donate from '../components/Donate';
 
 const HomePage = ({ onPayPalClick, onGreyClick, onSponsorClick }) => {
   return (
     <>
-      {/* Hero Section */}
       <section id="hero">
         <Hero />
       </section>
-      
-      {/* Introduction Section */}
+
       <section id="introduction">
         <Introduction />
       </section>
-      
-      {/* Funding Overview Section */}
-      <section id="funding">
-        <Funding />
-      </section>
-      
-      {/* Milestones Section */}
-      <section id="milestones">
-        <Milestones />
+
+      <section id="approach">
+        <Approach />
       </section>
 
-      {/* Transparency Section */}
-      <section id="transparency">
-        <Transparency />
+      <section id="programs">
+        <Programs />
       </section>
-      
-      {/* Donate Section */}
+
+      <section id="impact">
+        <Impact />
+      </section>
+
       <section id="donate">
-        <Donate 
+        <Donate
           onPayPalClick={onPayPalClick}
           onGreyClick={onGreyClick}
           onSponsorClick={onSponsorClick}
