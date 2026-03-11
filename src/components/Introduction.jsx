@@ -6,36 +6,36 @@ const Introduction = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            About <span className="gradient-text">My Journey</span>
+            Our <span className="gradient-text">Mission</span>
           </h2>
           <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            From humble beginnings to academic excellence, this is my story of perseverance, dedication, and the pursuit of knowledge.
+            We fund urgent pediatric care so children can access treatment fast, without families facing impossible choices.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Image/Visual */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl p-6 sm:p-8 h-80 sm:h-96 flex items-center justify-center">
+            <div className="bg-gradient-to-br from-rose-50 to-orange-100 rounded-3xl p-6 sm:p-8 h-80 sm:h-96 flex items-center justify-center border border-rose-100">
               <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-4xl text-white">🎓</span>
+                <div className="w-24 h-24 bg-gradient-to-br from-rose-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl text-white">{'\u2764'}</span>
                 </div>
-                <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-2">Precious Osuji</h3>
-                <p className="text-gray-600">Computer Science Student</p>
+                <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-2">Hope for Little Hearts</h3>
+                <p className="text-gray-600">Emergency Pediatric Care</p>
                 <div className="mt-4 inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
                   <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                  3.8 GPA
+                  24/7 Response Network
                 </div>
               </div>
             </div>
 
             {/* Floating elements */}
             <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
-              <span className="text-2xl text-white">⭐</span>
+              <span className="text-2xl text-white">{'\u2605'}</span>
             </div>
-            <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-xl text-white">📚</span>
+            <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg">
+              <span className="text-xl text-white">{'\u271A'}</span>
             </div>
           </div>
 
@@ -43,43 +43,46 @@ const Introduction = () => {
           <div className="space-y-8">
             <div>
               <h3 className="font-serif text-3xl font-semibold text-gray-900 mb-4">
-                My Academic Journey
+                Why This Fund Exists
               </h3>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                I'm a final-year Computer Science student with a 3.8 GPA, passionate about technology and its potential to solve real-world problems. My academic journey has been filled with challenges, but through determination and hard work, I've maintained excellence throughout my studies.
+                When children become seriously ill, the cost of emergency treatment can delay care. We close that gap by funding
+                urgent diagnostics, medications, surgery support, and safe recovery resources for families.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed">
-                Growing up, I always had a fascination with computers and how they work. This curiosity led me to pursue Computer Science, where I've discovered my love for software development, algorithms, and creating innovative solutions.
+                Every gift helps a child receive timely care and helps parents focus on healing instead of bills. We partner with
+                clinics to move funds quickly and track every expense with clear reporting.
               </p>
             </div>
 
             {/* Key Statistics */}
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-4 sm:p-6 text-center border border-blue-200">
-                <div className="text-3xl font-bold text-blue-600 mb-2">3.8</div>
-                <div className="text-sm text-gray-600 font-medium">Current GPA</div>
+              <div className="bg-gradient-to-br from-rose-50 to-rose-100 rounded-2xl p-4 sm:p-6 text-center border border-rose-200">
+                <div className="text-3xl font-bold text-rose-600 mb-2">72</div>
+                <div className="text-sm text-gray-600 font-medium">Projected Urgent Cases</div>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-4 sm:p-6 text-center border border-green-200">
-                <div className="text-3xl font-bold text-green-600 mb-2">2</div>
-                <div className="text-sm text-gray-600 font-medium">Months to Graduation</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">14</div>
+                <div className="text-sm text-gray-600 font-medium">Clinic Partners Target</div>
               </div>
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-4 sm:p-6 text-center border border-purple-200">
-                <div className="text-3xl font-bold text-purple-600 mb-2">4</div>
-                <div className="text-sm text-gray-600 font-medium">Years of Study</div>
+              <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl p-4 sm:p-6 text-center border border-amber-200">
+                <div className="text-3xl font-bold text-amber-600 mb-2">45</div>
+                <div className="text-sm text-gray-600 font-medium">Quarterly Care Grants Target</div>
               </div>
-              <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-4 sm:p-6 text-center border border-orange-200">
-                <div className="text-3xl font-bold text-orange-600 mb-2">A</div>
-                <div className="text-sm text-gray-600 font-medium">Grade Average</div>
+              <div className="bg-gradient-to-br from-sky-50 to-sky-100 rounded-2xl p-4 sm:p-6 text-center border border-sky-200">
+                <div className="text-3xl font-bold text-sky-600 mb-2">90%+</div>
+                <div className="text-sm text-gray-600 font-medium">Targeted for Direct Care</div>
               </div>
             </div>
 
             {/* Call to Action */}
-            <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-6 border border-blue-100">
+            <div className="bg-gradient-to-r from-rose-50 to-orange-50 rounded-2xl p-6 border border-rose-100">
               <h4 className="font-serif text-xl font-semibold text-gray-900 mb-3">
-                Why I Need Your Support
+                Why Your Gift Matters
               </h4>
               <p className="text-gray-700 leading-relaxed">
-                Despite my academic achievements, financial constraints threaten to derail my final semester. Your support will help me complete my degree and pursue my dream of becoming a software engineer who can give back to the community.
+                Families should never have to choose between care and cost. Your support helps children receive treatment on time
+                and gives parents space to focus on their child's recovery.
               </p>
             </div>
           </div>

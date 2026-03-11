@@ -17,14 +17,13 @@ const Funding = () => {
   }, []);
 
   const fundingItems = [
-    { category: 'Final Semester Tuition', amount: 18000, icon: '🎓' },
-    { category: 'Accommodation', amount: 14000, icon: '📝' },
-    { category: 'Living Expenses', amount: 8000, icon: '🏆' },
-    { category: 'Visa & Travel', amount: 3000, icon: '📚' },
-    { category: 'Academic Equipment', amount: 2000, icon: '🚌' },
-    { category: 'Administrative Reserve', amount: 5000, icon: '💰' }
+    { category: 'Emergency Surgeries', amount: 25000, icon: '\u2695' },
+    { category: 'Medications & Infusions', amount: 12000, icon: '\u2697' },
+    { category: 'Diagnostics & Imaging', amount: 8000, icon: '\u{1F50E}' },
+    { category: 'Hospital Care', amount: 15000, icon: '\u{1F3E5}' },
+    { category: 'Family Travel & Lodging', amount: 7000, icon: '\u{1F6FA}' },
+    { category: 'Emergency Reserve', amount: 8000, icon: '\u{1F4B0}' }
   ];
-
 
   const totalGoal = fundingItems.reduce((sum, item) => sum + item.amount, 0);
   const fundingBreakdown = fundingItems.map((item) => ({
@@ -32,7 +31,7 @@ const Funding = () => {
     percentage: (item.amount / totalGoal) * 100
   }));
 
-  const currentAmount = 250;
+  const currentAmount = 12500;
   const progressPercentage = (currentAmount / totalGoal) * 100;
 
   return (
@@ -43,7 +42,10 @@ const Funding = () => {
             Funding <span className="gradient-text">Breakdown</span>
           </h2>
           <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            Every dollar contributes directly to my academic completion. Here's exactly how your support will be used.
+            Every dollar moves quickly toward urgent care, recovery support, and emergency reserves for children in crisis.
+          </p>
+          <p className="text-sm text-gray-500 mt-3">
+            Figures shown represent the current funding plan and target coverage for the next 90 days.
           </p>
         </div>
 
@@ -59,7 +61,7 @@ const Funding = () => {
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
                   <div
-                    className="bg-gradient-to-r from-blue-500 to-blue-600 h-full rounded-full transition-all duration-1000 ease-out"
+                    className="bg-gradient-to-r from-rose-500 to-orange-500 h-full rounded-full transition-all duration-1000 ease-out"
                     style={{ width: `${progressPercentage}%` }}
                   ></div>
                 </div>
@@ -70,16 +72,16 @@ const Funding = () => {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-blue-50 rounded-xl border border-blue-200">
-                  <div className="text-2xl font-bold text-blue-600">{Math.round(progressPercentage)}%</div>
+                <div className="text-center p-4 bg-rose-50 rounded-xl border border-rose-200">
+                  <div className="text-2xl font-bold text-rose-600">{Math.round(progressPercentage)}%</div>
                   <div className="text-sm text-gray-600">Funded</div>
                 </div>
                 <div className="text-center p-4 bg-green-50 rounded-xl border border-green-200">
-                  <div className="text-2xl font-bold text-green-600">{Math.floor(currentAmount / 50)}</div>
-                  <div className="text-sm text-gray-600">Donors</div>
+                  <div className="text-2xl font-bold text-green-600">{Math.floor(currentAmount / 75)}</div>
+                  <div className="text-sm text-gray-600">Care Gifts</div>
                 </div>
-                <div className="text-center p-4 bg-purple-50 rounded-xl border border-purple-200">
-                  <div className="text-2xl font-bold text-purple-600">{campaignClosed ? 'Closed' : daysRemaining}</div>
+                <div className="text-center p-4 bg-orange-50 rounded-xl border border-orange-200">
+                  <div className="text-2xl font-bold text-orange-600">{campaignClosed ? 'Closed' : daysRemaining}</div>
                   <div className="text-sm text-gray-600">{campaignClosed ? 'Campaign Status' : 'Days Left'}</div>
                 </div>
               </div>
@@ -88,12 +90,12 @@ const Funding = () => {
             <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-5 sm:p-6 border border-orange-200">
               <div className="flex items-center mb-3">
                 <span className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-white text-sm">??</span>
+                  <span className="text-white text-sm">!</span>
                 </span>
                 <h4 className="font-semibold text-orange-800">Time Sensitive</h4>
               </div>
               <p className="text-orange-700 text-sm">
-                The academic deadline is approaching fast. Without your support, I may have to defer my final semester.
+                Many children need treatment within days. Delays can increase complications and recovery time.
               </p>
             </div>
           </div>
@@ -113,7 +115,7 @@ const Funding = () => {
 
                 <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
                   <div
-                    className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                    className="bg-gradient-to-r from-rose-500 to-orange-500 h-2 rounded-full transition-all duration-1000 ease-out"
                     style={{ width: `${item.percentage}%` }}
                   ></div>
                 </div>
@@ -121,32 +123,32 @@ const Funding = () => {
               </div>
             ))}
 
-            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-6 text-white">
+            <div className="bg-gradient-to-r from-rose-500 to-orange-500 rounded-2xl p-6 text-white">
               <div className="flex justify-between items-center">
                 <div>
                   <h4 className="font-serif text-xl font-semibold mb-1">Total Goal</h4>
-                  <p className="text-blue-100 text-sm">Complete academic funding needed</p>
+                  <p className="text-orange-100 text-sm">90-day pediatric care coverage</p>
                 </div>
                 <div className="text-right">
                   <div className="text-3xl font-bold">${totalGoal.toLocaleString()}</div>
-                  <div className="text-blue-100 text-sm">USD</div>
+                  <div className="text-orange-100 text-sm">USD</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 md:mt-16 bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl p-6 md:p-8 border border-green-200">
+        <div className="mt-12 md:mt-16 bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 border border-green-200">
           <div className="text-center">
             <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-4">Your Impact Goes Beyond Numbers</h3>
             <p className="text-gray-700 max-w-3xl mx-auto mb-6">
-              Your contribution does not just fund my education - it invests in my future ability to contribute to society,
-              create innovative solutions, and help other students facing similar challenges.
+              Your contribution supports rapid diagnosis, treatment, and recovery for children who need urgent care,
+              while easing the burden on families during the hardest moments.
             </p>
             <div className="flex justify-center">
               <div className="inline-flex items-center px-6 py-3 bg-white rounded-full shadow-sm border">
-                <span className="text-green-600 mr-2">??</span>
-                <span className="text-gray-700 font-medium">Every dollar makes a difference</span>
+                <span className="text-green-600 mr-2">{'\u271A'}</span>
+                <span className="text-gray-700 font-medium">Every gift keeps care moving</span>
               </div>
             </div>
           </div>

@@ -30,9 +30,9 @@ function App() {
   };
 
   const handleSponsorClick = () => {
-    const subject = encodeURIComponent('Direct Sponsorship Support');
+    const subject = encodeURIComponent('Direct Sponsorship for Pediatric Care');
     const body = encodeURIComponent(
-      'Hello,\n\nI would like to sponsor your academic journey. Please share sponsorship options and next steps.\n\nThank you.'
+      'Hello,\n\nI would like to sponsor pediatric care for children in need. Please share sponsorship options and next steps.\n\nThank you.'
     );
     window.location.href = `mailto:${paymentConfig.sponsorshipEmail}?subject=${subject}&body=${body}`;
   };

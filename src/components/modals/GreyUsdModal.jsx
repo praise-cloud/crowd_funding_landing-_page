@@ -44,7 +44,7 @@ Address: ${accountDetails.address}`;
 
     // Show success message
     setTimeout(() => {
-      onSuccess('Your Grey USD payment has been submitted successfully! We will review your receipt and confirm within 24 hours.');
+      onSuccess('Your Grey USD payment has been submitted successfully. We will review your receipt and confirm within 24 hours.');
     }, 500);
   };
 
@@ -57,8 +57,8 @@ Address: ${accountDetails.address}`;
         onClick={(e) => e.stopPropagation()}
       >
         <div className="text-center mb-6">
-          <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <span className="text-2xl text-white">🏦</span>
+          <div className="w-16 h-16 bg-gradient-to-br from-rose-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span className="text-2xl text-white">{'\u{1F3E6}'}</span>
           </div>
           <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-2">Grey USD Transfer</h3>
           <p className="text-gray-600">Complete your donation via bank transfer</p>
@@ -66,7 +66,7 @@ Address: ${accountDetails.address}`;
 
         <div className="space-y-6">
           {/* Account Details */}
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
+          <div className="bg-gradient-to-br from-rose-50 to-orange-50 rounded-2xl p-6 border border-rose-200">
             <h4 className="font-semibold text-gray-900 mb-3">Account Details</h4>
             <div className="space-y-3">
               <div className="flex justify-between items-center">
@@ -103,10 +103,10 @@ Address: ${accountDetails.address}`;
               className={`w-full mt-4 py-2 rounded-xl text-sm font-medium transition-colors ${
                 isCopying
                   ? 'bg-green-600 text-white'
-                  : 'bg-blue-600 text-white hover:bg-blue-700'
+                  : 'bg-rose-500 text-white hover:bg-rose-600'
               }`}
             >
-              {isCopying ? '✓ Copied!' : '📋 Copy Account Details'}
+              {isCopying ? '\u2713 Copied!' : '\u{1F4CB} Copy Account Details'}
             </button>
           </div>
 
@@ -118,7 +118,7 @@ Address: ${accountDetails.address}`;
               onClick={() => document.getElementById('receipt-upload').click()}
             >
               <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-xl">📄</span>
+                <span className="text-xl">{'\u{1F4C4}'}</span>
               </div>
               <p className="text-gray-600 mb-2">Click to upload receipt</p>
               <p className="text-sm text-gray-500">PNG, JPG, PDF up to 5MB</p>
@@ -145,7 +145,7 @@ Address: ${accountDetails.address}`;
                     onClick={removeFile}
                     className="text-green-600 hover:text-green-800 font-bold"
                   >
-                    ✕
+                    {'\u2715'}
                   </button>
                 </div>
               </div>

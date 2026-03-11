@@ -11,7 +11,7 @@
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  background: linear-gradient(90deg, #f43f5e, #f97316);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -41,12 +41,12 @@
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  background: linear-gradient(90deg, #f43f5e, #f97316);
   color: #ffffff;
 }
 
 .btn-primary:hover {
-  filter: brightness(0.95);
+  filter: brightness(0.96);
 }
 
 .btn-secondary {
@@ -81,8 +81,8 @@
 }
 
 .form-input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
   outline: 0;
 }
 

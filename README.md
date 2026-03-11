@@ -1,157 +1,86 @@
-# React FundMe Landing Page
+# Hope for Little Hearts Landing Page
 
-A modern, elegant React application for academic fundraising with integrated payment solutions.
+A modern React landing page for a pediatric care fundraising campaign. The site focuses on urgent medical support for children and provides clear donation paths, transparency, and impact reporting.
 
-## 🎯 Features
+## Features
 
-- **Elegant Design**: Premium aesthetics with glass morphism effects and gradients
-- **Responsive Layout**: Mobile-first approach with Tailwind CSS
-- **Payment Integration**: 
-  - Grey USD transfer with account details and receipt upload
-  - PayPal integration with amount selection
-  - Direct sponsorship options
-- **Interactive Components**: 
-  - Sticky navigation with smooth scrolling
-  - Modal system with animations
-  - File upload with validation
-  - Progress tracking and statistics
-- **Accessibility**: Keyboard navigation, ARIA labels, focus management
-- **Performance**: Optimized with React hooks and memoization
+- Purpose-built fundraising layout for pediatric care
+- Responsive design with Tailwind CSS utilities
+- Payment options: PayPal, Grey USD transfer, and direct sponsorship
+- Modal system with file upload and validation
+- Progress tracking and funding breakdown
+- Accessibility-friendly interactions and smooth scrolling
 
-## 🚀 Tech Stack
+## Tech Stack
 
-- **React 18** with TypeScript
-- **Tailwind CSS** for styling
-- **Custom Hooks** for state management
-- **Modern JavaScript** features
-- **Responsive Design** principles
+- React 18
+- Tailwind CSS
+- Vite
+- Custom hooks for modal and file upload management
 
-## 📦 Installation
+## Installation
 
 ```bash
-# Clone the repository
-git clone [repository-url]
-
-# Navigate to project directory
-cd react-fundme-landing
-
 # Install dependencies
 npm install
 
 # Start development server
-npm start
+npm run dev
 ```
 
-## 🎨 Design System
+## Design System
 
 ### Colors
 - Primary Dark: `#0B1C2D`
 - Secondary Dark: `#1F2933`
-- Accent Blue: `#3B82F6`
-- Success Green: `#22C55E`
-- Elegant Gold: `#D4AF37`
+- Accent Rose: `#F43F5E`
+- Accent Orange: `#F97316`
 - Soft Cream: `#FDF8F0`
 
 ### Typography
-- **Headings**: Playfair Display (serif)
-- **Body Text**: Inter (sans-serif)
+- Headings: Fraunces (serif)
+- Body: Manrope (sans-serif)
 
-## 💳 Payment Methods
-
-### Grey USD Transfer
-- Account details display
-- Copy-to-clipboard functionality
-- Receipt upload with file validation
-- Success confirmation
-
-### PayPal Integration
-- Amount selection ($50, $100, $250, $500)
-- Custom amount input
-- Direct PayPal redirect
-- Success confirmation
-
-### Direct Sponsorship
-- Email contact for long-term support
-- Regular updates and communication
-
-## 📱 Responsive Breakpoints
-
-- **Mobile**: 320px - 640px
-- **Tablet**: 640px - 1024px
-- **Desktop**: 1024px+
-
-## 🔧 Custom Hooks
-
-### useModal
-```javascript
-const { isOpen, openModal, closeModal, toggleModal } = useModal();
-```
-
-### useFileUpload
-```javascript
-const { file, preview, error, handleFileChange, removeFile } = useFileUpload();
-```
-
-## 📊 Component Structure
+## Component Structure
 
 ```
 src/
-├── components/
-│   ├── Header.jsx          # Sticky navigation
-│   ├── Hero.jsx           # Hero section with CTA
-│   ├── Introduction.jsx   # About section
-│   ├── Funding.jsx        # Funding breakdown
-│   ├── Milestones.jsx     # Academic timeline
-│   ├── Transparency.jsx   # Transparency commitment
-│   ├── Donate.jsx         # Payment options
-│   ├── Footer.jsx         # Contact information
-│   └── modals/
-│       ├── GreyUsdModal.jsx
-│       ├── PayPalModal.jsx
-│       └── SuccessModal.jsx
-├── hooks/
-│   ├── useModal.js        # Modal state management
-│   └── useFileUpload.js   # File upload functionality
-├── utils/
-│   └── paymentConfig.js   # Payment configuration
-└── App.jsx               # Main application
++-- components/
+�   +-- Header.jsx
+�   +-- Hero.jsx
+�   +-- Introduction.jsx
+�   +-- Funding.jsx
+�   +-- Milestones.jsx
+�   +-- Transparency.jsx
+�   +-- Donate.jsx
+�   +-- Footer.jsx
+�   +-- modals/
+�       +-- GreyUsdModal.jsx
+�       +-- PayPalModal.jsx
+�       +-- SuccessModal.jsx
++-- hooks/
+�   +-- useModal.js
+�   +-- useFileUpload.js
++-- utils/
+�   +-- paymentConfig.js
++-- App.jsx
 ```
 
-## 🧪 Testing
+## Configuration
 
-- Manual testing completed for all functionality
-- Responsive design tested across breakpoints
-- Payment flow integration verified
-- Accessibility features tested
+Update these values before production use:
+- `src/utils/paymentConfig.js` (Grey account details, sponsorship email, PayPal settings)
+- `.env` (PayPal client ID and currency overrides)
 
-## 🚀 Deployment
+## Update Log
 
-```bash
-# Build for production
-npm run build
+- March 11, 2026
+  - Rebranded the site to a pediatric care fundraising campaign
+  - Added hero imagery from `src/assets`
+  - Updated copy, timelines, and funding breakdown for medical relief
+  - Adjusted color palette and typography
+  - Updated contact details and placeholders in payment config
 
-# Deploy to your preferred hosting service
-# (Netlify, Vercel, GitHub Pages, etc.)
-```
+## License
 
-## 📧 Contact
-
-For questions about the project:
-- Email: precious@example.com
-- Phone: +1 (555) 123-4567
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
----
-
-**Built with ❤️ for academic success**
+MIT

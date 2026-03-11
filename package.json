@@ -1,7 +1,7 @@
 {
   "name": "react-fundme-landing",
   "version": "1.0.0",
-  "description": "A modern, elegant React application for academic fundraising with integrated payment solutions.",
+  "description": "A modern, elegant React application for pediatric care fundraising with integrated payment solutions.",
   "main": "src/main.jsx",
   "scripts": {
     "start": "vite",

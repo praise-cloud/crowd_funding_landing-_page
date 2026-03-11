@@ -3,21 +3,21 @@ export const paymentConfig = {
   paypalClientId: "AX4gOlYkd_7121cPUTgPgK3hyHJoYQZP7KanKQBz50XQSojyAKFSwWVHxfgqi5mIpsRTCTWZU6s2w4vE",
   paypalUrl: "https://www.paypal.com/donate",
   greyUsdUrl: "https://grey.co",
-  sponsorshipEmail: "qosuji13@gmail.com",
+  sponsorshipEmail: "care@littleheartsfund.org",
   campaignDeadline: "2026-03-29T23:59:59",
   greyAccountDetails: {
-    accountName: "precious chiamaka osuji",
-    accountNumber: "218627357074",
-    wireRouting: "101019644",
-    achRouting: "101019644",
+    accountName: "Hope for Little Hearts Fund",
+    accountNumber: "000000000000",
+    wireRouting: "000000000",
+    achRouting: "000000000",
     accountType: "Checking",
-    bankName: "lead Bank",
-    address: "1801 Main St., Kansas City, MO 64108"
+    bankName: "Example Bank",
+    address: "123 Care Avenue, City, State 00000"
   },
   paypalAmounts: [
     { value: 50, label: "$50" },
-    { value: 100, label: "$100" },
-    { value: 250, label: "$250" },
+    { value: 150, label: "$150" },
+    { value: 300, label: "$300" },
     { value: 500, label: "$500" }
   ],
   fileUpload: {

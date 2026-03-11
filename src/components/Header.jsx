@@ -29,9 +29,9 @@ const Header = ({ onContributeClick }) => {
   };
 
   const navigationItems = [
-    { label: 'About', section: 'introduction' },
+    { label: 'Mission', section: 'introduction' },
     { label: 'Funding', section: 'funding' },
-    { label: 'Milestones', section: 'milestones' },
+    { label: 'Timeline', section: 'milestones' },
     { label: 'Transparency', section: 'transparency' },
     { label: 'Donate', section: 'donate' }
   ];
@@ -48,12 +48,12 @@ const Header = ({ onContributeClick }) => {
         <div className="flex justify-between items-center py-3 sm:py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-base sm:text-lg">P</span>
+            <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-rose-500 to-orange-500 rounded-xl flex items-center justify-center">
+              <span className="text-white font-bold text-base sm:text-lg">H</span>
             </div>
             <div className="ml-3">
-              <h1 className="font-serif font-semibold text-base sm:text-lg text-gray-900">Precious Osuji</h1>
-              <p className="hidden sm:block text-sm text-gray-600">Academic Completion Fund</p>
+              <h1 className="font-serif font-semibold text-base sm:text-lg text-gray-900">Hope for Little Hearts</h1>
+              <p className="hidden sm:block text-sm text-gray-600">Pediatric Care Relief Fund</p>
             </div>
           </div>
 
@@ -63,7 +63,7 @@ const Header = ({ onContributeClick }) => {
               <button
                 key={item.label}
                 onClick={() => handleNavClick(item.section)}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-rose-600 font-medium transition-colors duration-200"
               >
                 {item.label}
               </button>
@@ -74,9 +74,9 @@ const Header = ({ onContributeClick }) => {
           <div className="flex items-center space-x-4">
             <button
               onClick={onContributeClick}
-              className="hidden sm:inline-flex bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              className="hidden sm:inline-flex bg-gradient-to-r from-rose-500 to-orange-500 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
             >
-              Contribute Now
+              Give Now
             </button>
 
             {/* Mobile Menu Button */}
@@ -84,7 +84,7 @@ const Header = ({ onContributeClick }) => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               type="button"
               aria-label="Toggle navigation menu"
-              className="md:hidden p-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-100 transition-colors"
+              className="md:hidden p-2 rounded-lg text-gray-600 hover:text-rose-600 hover:bg-gray-100 transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMobileMenuOpen ? (
@@ -104,16 +104,16 @@ const Header = ({ onContributeClick }) => {
               <button
                 key={item.label}
                 onClick={() => handleNavClick(item.section)}
-                className="block w-full text-left px-4 py-3 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg font-medium transition-colors duration-200"
+                className="block w-full text-left px-4 py-3 text-gray-700 hover:text-rose-600 hover:bg-gray-50 rounded-lg font-medium transition-colors duration-200"
               >
                 {item.label}
               </button>
             ))}
             <button
               onClick={handleContributeFromMenu}
-              className="block w-full text-left px-4 py-3 bg-blue-600 text-white rounded-lg font-medium transition-colors duration-200 hover:bg-blue-700"
+              className="block w-full text-left px-4 py-3 bg-rose-500 text-white rounded-lg font-medium transition-colors duration-200 hover:bg-rose-600"
             >
-              Contribute Now
+              Give Now
             </button>
           </nav>
         </div>

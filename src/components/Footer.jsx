@@ -8,16 +8,16 @@ const Footer = () => {
           {/* About */}
           <div>
             <div className="flex items-center mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-lg">P</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-rose-500 to-orange-500 rounded-xl flex items-center justify-center mr-3">
+                <span className="text-white font-bold text-lg">H</span>
               </div>
               <div>
-                <h3 className="font-serif font-semibold text-lg">Precious Osuji</h3>
-                <p className="text-gray-300 text-sm">Academic Completion Fund</p>
+                <h3 className="font-serif font-semibold text-lg">Hope for Little Hearts</h3>
+                <p className="text-gray-300 text-sm">Pediatric Care Relief Fund</p>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              A dedicated Computer Science student with a 3.8 GPA, working towards graduation and a future in software engineering.
+              A rapid-response fund providing critical pediatric care support, treatment assistance, and family relief.
             </p>
           </div>
 
@@ -27,7 +27,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a href="#introduction" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  About My Journey
+                  Mission & Impact
                 </a>
               </li>
               <li>
@@ -37,7 +37,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#milestones" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Academic Milestones
+                  Campaign Timeline
                 </a>
               </li>
               <li>
@@ -68,7 +68,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <a href="mailto:precious@example.com" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="mailto:care@littleheartsfund.org" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Contact for Questions
                 </a>
               </li>
@@ -80,22 +80,22 @@ const Footer = () => {
             <h3 className="font-serif font-semibold text-lg mb-4">Get in Touch</h3>
             <div className="space-y-3">
               <div className="flex items-center">
-                <span className="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                <span className="w-5 h-5 bg-rose-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                   <span className="text-white text-xs">@</span>
                 </span>
-                <span className="text-gray-300 text-sm">precious@example.com</span>
+                <span className="text-gray-300 text-sm">care@littleheartsfund.org</span>
               </div>
               <div className="flex items-center">
                 <span className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                  <span className="text-white text-xs">📱</span>
+                  <span className="text-white text-xs">{'\u260E'}</span>
                 </span>
-                <span className="text-gray-300 text-sm">+1 (555) 123-4567</span>
+                <span className="text-gray-300 text-sm">+1 (555) 246-8090</span>
               </div>
               <div className="flex items-center">
-                <span className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                  <span className="text-white text-xs">🎓</span>
+                <span className="w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                  <span className="text-white text-xs">{'\u{1F3E5}'}</span>
                 </span>
-                <span className="text-gray-300 text-sm">State University</span>
+                <span className="text-gray-300 text-sm">Regional Partner Clinics</span>
               </div>
             </div>
 
@@ -117,24 +117,24 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="mb-4 md:mb-0">
             <p className="text-gray-300 text-sm">
-              © 2024 Precious Osuji. All rights reserved.
+              2026 Hope for Little Hearts. All rights reserved.
             </p>
             <p className="text-gray-400 text-xs mt-1">
-              Your support means the world to me and my academic future.
+              Your support helps children access urgent care and recovery support.
             </p>
           </div>
 
           <div className="flex items-center space-x-4 w-full md:w-auto justify-between md:justify-start">
             <div className="text-right">
               <div className="text-xs text-gray-400">Last Updated</div>
-              <div className="text-sm text-gray-300">March 4, 2024</div>
+              <div className="text-sm text-gray-300">March 11, 2026</div>
             </div>
             <div className="flex space-x-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white text-sm">✓</span>
+              <div className="w-8 h-8 bg-rose-600 rounded-lg flex items-center justify-center">
+                <span className="text-white text-sm">{'\u2713'}</span>
               </div>
               <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
-                <span className="text-white text-sm">🛡️</span>
+                <span className="text-white text-sm">{'\u{1F6E1}'}</span>
               </div>
             </div>
           </div>
@@ -148,16 +148,16 @@ const Footer = () => {
               Secure Payment Processing
             </div>
             <div className="flex items-center">
-              <span className="w-3 h-3 bg-blue-500 rounded-full mr-2"></span>
-              Transparent Updates
-            </div>
-            <div className="flex items-center">
-              <span className="w-3 h-3 bg-purple-500 rounded-full mr-2"></span>
-              Direct Communication
+              <span className="w-3 h-3 bg-rose-500 rounded-full mr-2"></span>
+              Transparent Care Updates
             </div>
             <div className="flex items-center">
               <span className="w-3 h-3 bg-orange-500 rounded-full mr-2"></span>
-              Academic Verification
+              Direct Communication
+            </div>
+            <div className="flex items-center">
+              <span className="w-3 h-3 bg-blue-500 rounded-full mr-2"></span>
+              Partner Clinic Oversight
             </div>
           </div>
         </div>
