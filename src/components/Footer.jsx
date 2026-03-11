@@ -12,12 +12,12 @@ const Footer = () => {
                 <span className="text-white font-bold text-lg">H</span>
               </div>
               <div>
-                <h3 className="font-serif font-semibold text-lg">Hope for Little Hearts</h3>
-                <p className="text-gray-300 text-sm">Pediatric Care Relief Fund</p>
+                <h3 className="font-serif font-semibold text-lg">Hope Harbor Children's Aid</h3>
+                <p className="text-gray-300 text-sm">Professional Relief Organization</p>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              A rapid-response fund providing critical pediatric care support, treatment assistance, and family relief.
+              A trusted organization providing emergency medical care, protection, and recovery services for vulnerable children.
             </p>
           </div>
 
@@ -37,7 +37,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#milestones" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Campaign Timeline
+                  Organization Timeline
                 </a>
               </li>
               <li>
@@ -68,7 +68,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <a href="mailto:care@littleheartsfund.org" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="mailto:support@hopeharbor.org" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Contact for Questions
                 </a>
               </li>
@@ -83,7 +83,7 @@ const Footer = () => {
                 <span className="w-5 h-5 bg-rose-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                   <span className="text-white text-xs">@</span>
                 </span>
-                <span className="text-gray-300 text-sm">care@littleheartsfund.org</span>
+                <span className="text-gray-300 text-sm">support@hopeharbor.org</span>
               </div>
               <div className="flex items-center">
                 <span className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
@@ -117,7 +117,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="mb-4 md:mb-0">
             <p className="text-gray-300 text-sm">
-              2026 Hope for Little Hearts. All rights reserved.
+              2026 Hope Harbor Children's Aid. All rights reserved.
             </p>
             <p className="text-gray-400 text-xs mt-1">
               Your support helps children access urgent care and recovery support.

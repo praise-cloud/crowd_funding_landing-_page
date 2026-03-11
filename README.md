@@ -1,22 +1,22 @@
-# Hope for Little Hearts Landing Page
+# Hope Harbor Children's Aid Landing Page
 
-A modern React landing page for a pediatric care fundraising campaign. The site focuses on urgent medical support for children and provides clear donation paths, transparency, and impact reporting.
+A professional React landing page for a child relief organization. The site focuses on urgent medical support, shelter, recovery services, and transparent fundraising.
 
 ## Features
 
-- Purpose-built fundraising layout for pediatric care
+- Professional nonprofit layout focused on child relief
 - Responsive design with Tailwind CSS utilities
 - Payment options: PayPal, Grey USD transfer, and direct sponsorship
 - Modal system with file upload and validation
 - Progress tracking and funding breakdown
-- Accessibility-friendly interactions and smooth scrolling
+- Scroll reveal animations and micro-interactions
 
 ## Tech Stack
 
 - React 18
 - Tailwind CSS
 - Vite
-- Custom hooks for modal and file upload management
+- Custom hooks for modal, file upload, and scroll reveal
 
 ## Installation
 
@@ -61,6 +61,7 @@ src/
 +-- hooks/
 ¦   +-- useModal.js
 ¦   +-- useFileUpload.js
+¦   +-- useScrollReveal.js
 +-- utils/
 ¦   +-- paymentConfig.js
 +-- App.jsx
@@ -75,10 +76,10 @@ Update these values before production use:
 ## Update Log
 
 - March 11, 2026
-  - Rebranded the site to a pediatric care fundraising campaign
-  - Added hero imagery from `src/assets`
-  - Updated copy, timelines, and funding breakdown for medical relief
-  - Adjusted color palette and typography
+  - Rebranded the site to a professional child relief organization
+  - Added scroll reveal animations and micro-interactions
+  - Updated imagery and professional fundraising copy
+  - Refined donation flows and organization messaging
   - Updated contact details and placeholders in payment config
 
 ## License

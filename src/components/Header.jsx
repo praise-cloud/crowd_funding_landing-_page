@@ -18,7 +18,7 @@ const Header = ({ onContributeClick }) => {
   const handleNavClick = (sectionId) => {
     // Close mobile menu if open
     setIsMobileMenuOpen(false);
-    
+
     // Smooth scroll to section with React Router hash navigation
     scrollToSection(sectionId);
   };
@@ -37,10 +37,10 @@ const Header = ({ onContributeClick }) => {
   ];
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
+        isScrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100'
           : 'bg-transparent'
       }`}
     >
@@ -52,8 +52,8 @@ const Header = ({ onContributeClick }) => {
               <span className="text-white font-bold text-base sm:text-lg">H</span>
             </div>
             <div className="ml-3">
-              <h1 className="font-serif font-semibold text-base sm:text-lg text-gray-900">Hope for Little Hearts</h1>
-              <p className="hidden sm:block text-sm text-gray-600">Pediatric Care Relief Fund</p>
+              <h1 className="font-serif font-semibold text-base sm:text-lg text-gray-900">Hope Harbor Children's Aid</h1>
+              <p className="hidden sm:block text-sm text-gray-600">Professional Relief Organization</p>
             </div>
           </div>
 

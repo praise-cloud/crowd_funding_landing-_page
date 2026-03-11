@@ -59,7 +59,7 @@ const Transparency = () => {
   return (
     <section id="transparency" className="py-20 md:py-28 bg-gradient-to-br from-white to-[--soft-cream]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 md:mb-16 reveal" data-reveal>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Complete <span className="gradient-text">Transparency</span>
           </h2>
@@ -70,7 +70,12 @@ const Transparency = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
           {transparencyItems.map((item, index) => (
-            <div key={index} className={`card hover:shadow-xl transition-all duration-300 ${colorClasses[item.color].bg} ${colorClasses[item.color].border} border-2`}>
+            <div
+              key={index}
+              className={`card hover:shadow-xl transition-all duration-300 ${colorClasses[item.color].bg} ${colorClasses[item.color].border} border-2 reveal`}
+              data-reveal
+              data-reveal-delay={index * 120}
+            >
               <div className="flex items-start space-x-4">
                 <div className={`w-12 h-12 ${colorClasses[item.color].icon} rounded-xl flex items-center justify-center flex-shrink-0`}>
                   <span className="text-xl text-white">{item.icon}</span>
@@ -84,7 +89,7 @@ const Transparency = () => {
           ))}
         </div>
 
-        <div className="relative overflow-hidden rounded-[2rem] border border-rose-100 shadow-2xl mb-12">
+        <div className="relative overflow-hidden rounded-[2rem] border border-rose-100 shadow-2xl mb-12 reveal" data-reveal>
           <img
             src={careImage}
             alt="Care team supporting a child during treatment"
@@ -103,7 +108,7 @@ const Transparency = () => {
         </div>
 
         {/* Commitment Statement */}
-        <div className="bg-gradient-to-r from-rose-50 to-orange-50 rounded-3xl p-6 md:p-8 border border-rose-200 mb-12">
+        <div className="bg-gradient-to-r from-rose-50 to-orange-50 rounded-3xl p-6 md:p-8 border border-rose-200 mb-12 reveal" data-reveal>
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-br from-rose-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
               <span className="text-2xl text-white">{'\u{1F91D}'}</span>
@@ -124,10 +129,10 @@ const Transparency = () => {
 
         {/* Contact Information */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="card">
+          <div className="card reveal" data-reveal>
             <h3 className="font-serif text-xl font-semibold text-gray-900 mb-4">Get in Touch</h3>
             <p className="text-gray-600 mb-6">
-              Questions about the fund, our partners, or how we deploy care grants? We respond quickly with clear answers.
+              Questions about the organization, our partners, or how we deploy care grants? We respond quickly with clear answers.
             </p>
             <div className="space-y-4">
               <div className="flex items-center">
@@ -136,7 +141,7 @@ const Transparency = () => {
                 </span>
                 <div>
                   <div className="font-medium text-gray-900">Email</div>
-                  <div className="text-sm text-gray-600">care@littleheartsfund.org</div>
+                  <div className="text-sm text-gray-600">support@hopeharbor.org</div>
                 </div>
               </div>
               <div className="flex items-center">
@@ -160,7 +165,7 @@ const Transparency = () => {
             </div>
           </div>
 
-          <div className="card">
+          <div className="card reveal" data-reveal data-reveal-delay="120">
             <h3 className="font-serif text-xl font-semibold text-gray-900 mb-4">Response Promise</h3>
             <p className="text-gray-600 mb-6">
               We commit to responding to all messages within 24 hours and providing detailed care updates when requested.

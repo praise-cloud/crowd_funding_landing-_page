@@ -4,36 +4,36 @@ const Milestones = () => {
   const milestones = [
     {
       year: '2026',
-      title: 'Campaign Launch',
-      description: 'Emergency pediatric care fund goes live with clinic partnerships and rapid response workflows.',
+      title: 'Organization Launch',
+      description: `Hope Harbor Children's Aid activates rapid response protocols for children in crisis.`,
       icon: '\u{1F680}',
       status: 'completed'
     },
     {
       year: '2026',
-      title: 'First Treatment Cycle',
-      description: 'Immediate funding deployed for diagnostics, medications, and surgery support.',
+      title: 'Emergency Care Funding',
+      description: `Immediate funding deployed for diagnostics, medications, and surgery support.`,
       icon: '\u2695',
       status: 'completed'
     },
     {
       year: '2026',
       title: 'Family Recovery Support',
-      description: 'Expanded lodging, transport, and counseling coverage for families in crisis.',
+      description: `Expanded lodging, nutrition, and counseling coverage for families in crisis.`,
       icon: '\u{1F9E1}',
       status: 'current'
     },
     {
       year: '2026',
       title: 'Care Access Scale-Up',
-      description: 'Increase clinic capacity and reduce wait times for critical procedures.',
+      description: `Increase clinic capacity and reduce wait times for critical procedures.`,
       icon: '\u{1F4AA}',
       status: 'pending'
     },
     {
       year: '2027',
-      title: 'Regional Pediatric Network',
-      description: 'Sustain a wider care network across hospitals and partner clinics.',
+      title: 'Regional Care Network',
+      description: `Sustain a wider care network across hospitals and partner clinics.`,
       icon: '\u{1F4CD}',
       status: 'pending'
     }
@@ -42,12 +42,12 @@ const Milestones = () => {
   return (
     <section id="milestones" className="py-20 md:py-28 bg-gradient-to-br from-[--soft-cream] to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 md:mb-16 reveal" data-reveal>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Campaign <span className="gradient-text">Timeline</span>
+            Organization <span className="gradient-text">Timeline</span>
           </h2>
           <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            A clear path from immediate relief to sustainable pediatric care for children in need.
+            A clear path from immediate relief to sustainable long-term care for children in need.
           </p>
         </div>
 
@@ -59,7 +59,9 @@ const Milestones = () => {
             {milestones.map((milestone, index) => (
               <div
                 key={milestone.title}
-                className={`relative flex md:items-center ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}
+                className={`relative flex md:items-center ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'} reveal`}
+                data-reveal
+                data-reveal-delay={index * 120}
               >
                 <div className={`w-full md:w-5/12 md:${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                   <div
@@ -115,7 +117,7 @@ const Milestones = () => {
           </div>
         </div>
 
-        <div className="mt-12 md:mt-16 bg-gradient-to-r from-rose-50 to-orange-50 rounded-3xl p-6 md:p-8 border border-rose-200">
+        <div className="mt-12 md:mt-16 bg-gradient-to-r from-rose-50 to-orange-50 rounded-3xl p-6 md:p-8 border border-rose-200 reveal" data-reveal>
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-br from-rose-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
               <span className="text-2xl text-white">{'\u2764'}</span>

@@ -16,19 +16,19 @@ const Donate = ({ onPayPalClick, onGreyClick, onSponsorClick }) => {
   return (
     <section id="donate" className="py-20 md:py-28 bg-gradient-to-br from-white to-[--soft-cream]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 md:mb-16 reveal" data-reveal>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Give <span className="gradient-text">Emergency Care</span>
+            Support <span className="gradient-text">Our Work</span>
           </h2>
           <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            Your contribution helps children receive urgent treatment, medications, and family support services.
+            Your contribution helps children receive urgent treatment, safe shelter, and family support services.
             Every donation keeps care moving without delay.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {/* PayPal Donation */}
-          <div className="card text-center group hover:scale-105 transition-transform duration-300">
+          <div className="card text-center group hover:scale-105 transition-transform duration-300 reveal" data-reveal>
             <div className="w-16 h-16 bg-gradient-to-br from-rose-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
               <span className="text-2xl text-white">{'\u{1F4B3}'}</span>
             </div>
@@ -47,7 +47,7 @@ const Donate = ({ onPayPalClick, onGreyClick, onSponsorClick }) => {
           </div>
 
           {/* Grey USD Transfer */}
-          <div className="card text-center group hover:scale-105 transition-transform duration-300">
+          <div className="card text-center group hover:scale-105 transition-transform duration-300 reveal" data-reveal data-reveal-delay="120">
             <div className="w-16 h-16 bg-gradient-to-br from-slate-600 to-slate-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
               <span className="text-2xl text-white">{'\u{1F3E6}'}</span>
             </div>
@@ -66,7 +66,7 @@ const Donate = ({ onPayPalClick, onGreyClick, onSponsorClick }) => {
           </div>
 
           {/* Direct Sponsorship */}
-          <div className="card text-center group hover:scale-105 transition-transform duration-300">
+          <div className="card text-center group hover:scale-105 transition-transform duration-300 reveal" data-reveal data-reveal-delay="240">
             <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
               <span className="text-2xl text-white">{'\u{1F91D}'}</span>
             </div>
@@ -85,7 +85,7 @@ const Donate = ({ onPayPalClick, onGreyClick, onSponsorClick }) => {
         </div>
 
         {campaignClosed && (
-          <div className="mt-6 text-center">
+          <div className="mt-6 text-center reveal" data-reveal>
             <p className="text-sm text-red-600 font-medium">
               The donation window has closed. PayPal and Grey payments are no longer available.
             </p>
@@ -93,7 +93,7 @@ const Donate = ({ onPayPalClick, onGreyClick, onSponsorClick }) => {
         )}
 
         {/* Security Notice */}
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center reveal" data-reveal>
           <div className="inline-flex items-center gap-2 text-sm text-gray-500">
             <span className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
               <span className="text-white text-xs">{'\u2713'}</span>
@@ -103,7 +103,7 @@ const Donate = ({ onPayPalClick, onGreyClick, onSponsorClick }) => {
         </div>
 
         {/* Impact Statement */}
-        <div className="mt-12 bg-gradient-to-r from-rose-50 to-orange-50 rounded-3xl p-6 md:p-8 border border-rose-100">
+        <div className="mt-12 bg-gradient-to-r from-rose-50 to-orange-50 rounded-3xl p-6 md:p-8 border border-rose-100 reveal" data-reveal>
           <div className="text-center">
             <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-4">
               Your Impact

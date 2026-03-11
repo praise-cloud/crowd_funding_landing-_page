@@ -3,10 +3,10 @@ export const paymentConfig = {
   paypalClientId: "AX4gOlYkd_7121cPUTgPgK3hyHJoYQZP7KanKQBz50XQSojyAKFSwWVHxfgqi5mIpsRTCTWZU6s2w4vE",
   paypalUrl: "https://www.paypal.com/donate",
   greyUsdUrl: "https://grey.co",
-  sponsorshipEmail: "care@littleheartsfund.org",
+  sponsorshipEmail: "support@hopeharbor.org",
   campaignDeadline: "2026-03-29T23:59:59",
   greyAccountDetails: {
-    accountName: "Hope for Little Hearts Fund",
+    accountName: "Hope Harbor Children's Aid",
     accountNumber: "000000000000",
     wireRouting: "000000000",
     achRouting: "000000000",

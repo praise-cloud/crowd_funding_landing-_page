@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { getDaysRemaining, isCampaignClosed } from '../utils/paymentConfig';
 import careImageOne from '../assets/images/OIP-1469777345.jpg';
 import careImageTwo from '../assets/images/OIP-2412146049.jpg';
 import careImageThree from '../assets/images/OIP-3107163405.jpg';
-import { getDaysRemaining, isCampaignClosed } from '../utils/paymentConfig';
 
 const Funding = () => {
   const [daysRemaining, setDaysRemaining] = useState(getDaysRemaining);
@@ -34,13 +34,13 @@ const Funding = () => {
     percentage: (item.amount / totalGoal) * 100
   }));
 
-  const currentAmount = 1000;
+  const currentAmount = 12500;
   const progressPercentage = (currentAmount / totalGoal) * 100;
 
   return (
     <section id="funding" className="py-20 md:py-28 bg-gradient-to-br from-[--soft-cream] to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 md:mb-16 reveal" data-reveal>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Funding <span className="gradient-text">Breakdown</span>
           </h2>
@@ -54,7 +54,7 @@ const Funding = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
           <div className="space-y-8">
-            <div className="card">
+            <div className="card reveal" data-reveal>
               <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-6">Funding Progress</h3>
 
               <div className="mb-6">
@@ -75,22 +75,22 @@ const Funding = () => {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-rose-50 rounded-xl border border-rose-200">
+                <div className="text-center p-4 bg-rose-50 rounded-xl border border-rose-200 hover-lift">
                   <div className="text-2xl font-bold text-rose-600">{Math.round(progressPercentage)}%</div>
                   <div className="text-sm text-gray-600">Funded</div>
                 </div>
-                <div className="text-center p-4 bg-green-50 rounded-xl border border-green-200">
+                <div className="text-center p-4 bg-green-50 rounded-xl border border-green-200 hover-lift">
                   <div className="text-2xl font-bold text-green-600">{Math.floor(currentAmount / 75)}</div>
                   <div className="text-sm text-gray-600">Care Gifts</div>
                 </div>
-                <div className="text-center p-4 bg-orange-50 rounded-xl border border-orange-200">
+                <div className="text-center p-4 bg-orange-50 rounded-xl border border-orange-200 hover-lift">
                   <div className="text-2xl font-bold text-orange-600">{campaignClosed ? 'Closed' : daysRemaining}</div>
                   <div className="text-sm text-gray-600">{campaignClosed ? 'Campaign Status' : 'Days Left'}</div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-5 sm:p-6 border border-orange-200">
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl p-5 sm:p-6 border border-orange-200 reveal" data-reveal data-reveal-delay="120">
               <div className="flex items-center mb-3">
                 <span className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-3">
                   <span className="text-white text-sm">!</span>
@@ -104,10 +104,12 @@ const Funding = () => {
           </div>
 
           <div className="space-y-6">
-            <h3 className="font-serif text-xl sm:text-2xl font-semibold text-gray-900 mb-6">How Funds Will Be Used</h3>
+            <h3 className="font-serif text-xl sm:text-2xl font-semibold text-gray-900 mb-6 reveal" data-reveal>
+              How Funds Will Be Used
+            </h3>
 
-            {fundingBreakdown.map((item) => (
-              <div key={item.category} className="card hover:shadow-lg transition-shadow duration-300">
+            {fundingBreakdown.map((item, index) => (
+              <div key={item.category} className="card hover:shadow-lg transition-shadow duration-300 reveal" data-reveal data-reveal-delay={150 + index * 70}>
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center">
                     <span className="text-2xl mr-3">{item.icon}</span>
@@ -126,7 +128,7 @@ const Funding = () => {
               </div>
             ))}
 
-            <div className="bg-gradient-to-r from-rose-500 to-orange-500 rounded-2xl p-6 text-white">
+            <div className="bg-gradient-to-r from-rose-500 to-orange-500 rounded-2xl p-6 text-white reveal" data-reveal data-reveal-delay="220">
               <div className="flex justify-between items-center">
                 <div>
                   <h4 className="font-serif text-xl font-semibold mb-1">Total Goal</h4>
@@ -150,8 +152,9 @@ const Funding = () => {
             ].map((item, index) => (
               <div
                 key={item.label}
-                className="relative overflow-hidden rounded-3xl shadow-xl border border-rose-100"
-                style={{ animationDelay: `${index * 0.12}s` }}
+                className="relative overflow-hidden rounded-3xl shadow-xl border border-rose-100 reveal"
+                data-reveal
+                data-reveal-delay={120 + index * 120}
               >
                 <img
                   src={item.image}
@@ -168,7 +171,7 @@ const Funding = () => {
           </div>
         </div>
 
-        <div className="mt-12 md:mt-16 bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 border border-green-200">
+        <div className="mt-12 md:mt-16 bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-6 md:p-8 border border-green-200 reveal" data-reveal>
           <div className="text-center">
             <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-4">Your Impact Goes Beyond Numbers</h3>
             <p className="text-gray-700 max-w-3xl mx-auto mb-6">

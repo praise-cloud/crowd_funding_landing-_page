@@ -17,56 +17,59 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div className="text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 bg-white/80 border border-rose-100 rounded-full px-4 py-2 text-xs uppercase tracking-widest text-rose-600 mb-6 reveal" data-reveal>
+              Trusted Help Organization
+            </div>
             {/* Main Heading */}
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-5 sm:mb-6 leading-tight">
-              Help Children Fight{' '}
-              <span className="bg-gradient-to-r from-rose-500 to-orange-500 bg-clip-text text-transparent">
-                Life-Threatening Illness
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-5 sm:mb-6 leading-tight reveal" data-reveal data-reveal-delay="120">
+              Hope Harbor Children's Aid
+              <span className="block bg-gradient-to-r from-rose-500 to-orange-500 bg-clip-text text-transparent">
+                Restoring Safety, Health, and Hope
               </span>
             </h1>
 
             {/* Subheading */}
-            <p className="text-base sm:text-lg md:text-2xl text-gray-600 mb-8 max-w-2xl leading-relaxed">
-              Hope for Little Hearts is raising emergency funds for children facing critical illness.
-              Your gift provides urgent treatment, medications, and compassionate family support.
+            <p className="text-base sm:text-lg md:text-2xl text-gray-600 mb-8 max-w-2xl leading-relaxed reveal" data-reveal data-reveal-delay="220">
+              We are a professional relief organization dedicated to protecting vulnerable children. Your support
+              funds emergency care, shelter, and long-term recovery services for families in crisis.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-stretch sm:items-center mb-10 sm:mb-12">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-stretch sm:items-center mb-10 sm:mb-12 reveal" data-reveal data-reveal-delay="320">
               <button
                 onClick={() => document.getElementById('donate').scrollIntoView({ behavior: 'smooth' })}
                 className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
               >
-                Give Emergency Care
+                Support a Child
               </button>
               <button
                 onClick={() => document.getElementById('introduction').scrollIntoView({ behavior: 'smooth' })}
                 className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
               >
-                Learn the Mission
+                Learn About Us
               </button>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8 max-w-2xl mx-auto lg:mx-0">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8 max-w-2xl mx-auto lg:mx-0 reveal" data-reveal data-reveal-delay="420">
               <div className="text-center lg:text-left">
                 <div className="text-3xl md:text-4xl font-bold text-rose-600 mb-2">$75,000</div>
-                <div className="text-gray-600">Goal Amount</div>
+                <div className="text-gray-600">Quarterly Relief Goal</div>
               </div>
               <div className="text-center lg:text-left">
                 <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">120</div>
-                <div className="text-gray-600">Care Grants Target</div>
+                <div className="text-gray-600">Children Supported Target</div>
               </div>
               <div className="text-center lg:text-left">
                 <div className="text-3xl md:text-4xl font-bold text-orange-600 mb-2">6</div>
-                <div className="text-gray-600">Clinic Partners Target</div>
+                <div className="text-gray-600">Partner Clinics Target</div>
               </div>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute -top-6 -right-6 w-28 h-28 rounded-3xl bg-gradient-to-br from-rose-200 to-orange-200 blur-xl opacity-70"></div>
-            <div className="absolute -bottom-6 -left-6 w-28 h-28 rounded-3xl bg-gradient-to-br from-amber-100 to-yellow-200 blur-xl opacity-70"></div>
+          <div className="relative reveal" data-reveal data-reveal-delay="180">
+            <div className="absolute -top-6 -right-6 w-28 h-28 rounded-3xl bg-gradient-to-br from-rose-200 to-orange-200 blur-xl opacity-70 micro-float"></div>
+            <div className="absolute -bottom-6 -left-6 w-28 h-28 rounded-3xl bg-gradient-to-br from-amber-100 to-yellow-200 blur-xl opacity-70 micro-float"></div>
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-rose-100">
               <img
                 src={heroImage}
@@ -75,8 +78,8 @@ const Hero = () => {
               />
             </div>
             <div className="absolute -bottom-4 right-6 bg-white/90 backdrop-blur rounded-2xl px-4 py-3 shadow-lg border border-rose-100">
-              <div className="text-xs uppercase tracking-wide text-gray-500 mb-1">Urgent Need</div>
-              <div className="text-sm font-semibold text-gray-900">Critical treatment gap this month</div>
+              <div className="text-xs uppercase tracking-wide text-gray-500 mb-1">Immediate Response</div>
+              <div className="text-sm font-semibold text-gray-900">Rapid care for children in crisis</div>
             </div>
           </div>
         </div>
