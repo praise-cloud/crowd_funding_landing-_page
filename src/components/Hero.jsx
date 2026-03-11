@@ -43,7 +43,7 @@ const Hero = () => {
           </button>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto reveal" data-reveal data-reveal-delay="420">
+        <div className="my-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto reveal " data-reveal data-reveal-delay="420">
           <div className="glass-card">
             <div className="text-3xl md:text-4xl font-extrabold text-white">$75,000</div>
             <div className="text-white/70 mt-2">Quarterly Relief Goal</div>

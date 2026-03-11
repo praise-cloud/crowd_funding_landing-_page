@@ -22,9 +22,9 @@ const Layout = ({ onPayPalClick, onGreyClick, onSponsorClick, handleSuccess }) =
     <div className="min-h-screen bg-[--soft-cream]">
       {/* Header */}
       <Header onContributeClick={handleContributeClick} />
-      
+
       {/* Main Content */}
-      <main className="pt-20 sm:pt-24">
+      <main className="pt-24 sm:pt-24 lg:pt-28">
         <Outlet context={{ onPayPalClick, onGreyClick, onSponsorClick, handleSuccess }} />
       </main>
 
@@ -32,19 +32,19 @@ const Layout = ({ onPayPalClick, onGreyClick, onSponsorClick, handleSuccess }) =
       <Footer />
 
       {/* Modals */}
-      <GreyUsdModal 
+      <GreyUsdModal
         isOpen={modals.greyUsd}
         onClose={() => closeModal('greyUsd')}
         onSuccess={handleSuccess}
       />
-      
-      <PayPalModal 
+
+      <PayPalModal
         isOpen={modals.paypal}
         onClose={() => closeModal('paypal')}
         onSuccess={handleSuccess}
       />
-      
-      <SuccessModal 
+
+      <SuccessModal
         isOpen={modals.success}
         onClose={() => closeModal('success')}
         message="Your contribution has been received and will be processed shortly."
