@@ -54,11 +54,11 @@ const Header = ({ onContributeClick }) => {
           aria-label="Toggle navigation labels"
           className="p-2 rounded-full bg-rose-500 text-white"
         >
-          {isMobileMenuOpen ? '×' : '+'}
+          {isMobileMenuOpen ? 'ï¿½' : '+'}
         </button>
       </div>
     </header>
   );
 };
 
-export default Header;
+export default Header; 

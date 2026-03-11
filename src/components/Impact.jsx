@@ -23,7 +23,7 @@ const Impact = () => {
         </div>
       </div>
 
-      <div className="relative overflow-hidden h-[70vh] min-h-[460px] reveal mx-40 rounded-xl" data-reveal>
+      <div className="relative overflow-hidden h-[70vh] min-h-[460px] reveal mx-40 rounded-2xl" data-reveal>
         <img
           src={impactImage}
           alt="Child receiving support"
