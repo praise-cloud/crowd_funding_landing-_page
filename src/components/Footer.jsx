@@ -85,13 +85,7 @@ const Footer = () => {
                 <span className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                   <span className="text-white text-xs">{'\u260E'}</span>
                 </span>
-                <span className="text-gray-300 text-sm">+1 (555) 246-8090</span>
-              </div>
-              <div className="flex items-center">
-                <span className="w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
-                  <span className="text-white text-xs">{'\u{1F3E5}'}</span>
-                </span>
-                <span className="text-gray-300 text-sm">Regional Partner Clinics</span>
+                <span className="text-gray-300 text-sm">+234 813-449-4391</span>
               </div>
             </div>
 
