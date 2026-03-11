@@ -28,7 +28,7 @@ const HomePage = ({ onPayPalClick, onGreyClick, onSponsorClick }) => {
       <section id="milestones">
         <Milestones />
       </section>
-      
+
       {/* Transparency Section */}
       <section id="transparency">
         <Transparency />

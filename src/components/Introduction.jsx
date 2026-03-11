@@ -1,4 +1,5 @@
 import React from 'react';
+import introImage from '../assets/images/OIP-1545874537.jpg';
 
 const Introduction = () => {
   return (
@@ -16,15 +17,21 @@ const Introduction = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
           {/* Image/Visual */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-rose-50 to-orange-100 rounded-3xl p-6 sm:p-8 h-80 sm:h-96 flex items-center justify-center border border-rose-100">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-rose-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="relative rounded-3xl overflow-hidden h-80 sm:h-96 border border-rose-100 shadow-xl">
+              <img
+                src={introImage}
+                alt="Care team supporting a child"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent"></div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-rose-500 to-orange-500 rounded-full flex items-center justify-center mb-4 shadow-lg">
                   <span className="text-3xl text-white">{'\u2764'}</span>
                 </div>
-                <h3 className="font-serif text-2xl font-semibold text-gray-900 mb-2">Hope for Little Hearts</h3>
-                <p className="text-gray-600">Emergency Pediatric Care</p>
-                <div className="mt-4 inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                <h3 className="font-serif text-2xl font-semibold text-white mb-2">Hope for Little Hearts</h3>
+                <p className="text-white/80">Emergency Pediatric Care</p>
+                <div className="mt-4 inline-flex items-center px-4 py-2 bg-white/90 text-slate-800 rounded-full text-sm font-medium">
+                  <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
                   24/7 Response Network
                 </div>
               </div>

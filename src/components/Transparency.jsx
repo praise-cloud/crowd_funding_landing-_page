@@ -1,4 +1,5 @@
 import React from 'react';
+import careImage from '../assets/images/OIP-2831072625.jpg';
 
 const Transparency = () => {
   const transparencyItems = [
@@ -81,6 +82,24 @@ const Transparency = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="relative overflow-hidden rounded-[2rem] border border-rose-100 shadow-2xl mb-12">
+          <img
+            src={careImage}
+            alt="Care team supporting a child during treatment"
+            className="w-full h-72 md:h-96 object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/70 via-slate-900/15 to-transparent"></div>
+          <div className="absolute inset-0 flex items-end">
+            <div className="p-6 md:p-10 text-white max-w-xl">
+              <div className="text-xs uppercase tracking-wider text-white/70">Transparency in action</div>
+              <div className="text-2xl md:text-3xl font-semibold mt-2">Clear reporting, compassionate care</div>
+              <p className="text-white/80 mt-3 text-sm md:text-base">
+                We document care milestones and provide donors with timely, respectful updates.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Commitment Statement */}

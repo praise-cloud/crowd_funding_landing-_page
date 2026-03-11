@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from '../assets/WhatsApp Image 2026-03-11 at 8.46.58 AM.jpeg';
+import heroImage from '../assets/images/WhatsApp Image 2026-03-11 at 8.46.58 AM.jpeg';
 
 const Hero = () => {
   return (

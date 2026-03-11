@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import careImageOne from '../assets/images/OIP-1469777345.jpg';
+import careImageTwo from '../assets/images/OIP-2412146049.jpg';
+import careImageThree from '../assets/images/OIP-3107163405.jpg';
 import { getDaysRemaining, isCampaignClosed } from '../utils/paymentConfig';
 
 const Funding = () => {
@@ -31,11 +34,7 @@ const Funding = () => {
     percentage: (item.amount / totalGoal) * 100
   }));
 
-<<<<<<< HEAD
-  const currentAmount = 12500;
-=======
   const currentAmount = 1000;
->>>>>>> 3046d6bb0d2432f7e244340e4438dac430e256fb
   const progressPercentage = (currentAmount / totalGoal) * 100;
 
   return (
@@ -139,6 +138,33 @@ const Funding = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="mt-12 md:mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { label: 'Emergency Response', image: careImageOne },
+              { label: 'Family Support', image: careImageTwo },
+              { label: 'Clinic Partnership', image: careImageThree }
+            ].map((item, index) => (
+              <div
+                key={item.label}
+                className="relative overflow-hidden rounded-3xl shadow-xl border border-rose-100"
+                style={{ animationDelay: `${index * 0.12}s` }}
+              >
+                <img
+                  src={item.image}
+                  alt={`${item.label} in action`}
+                  className="w-full h-56 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-slate-900/20 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="text-sm uppercase tracking-wider text-white/70">{item.label}</div>
+                  <div className="text-lg font-semibold">Every gift helps us respond faster</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

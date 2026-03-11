@@ -8,10 +8,12 @@ import GreyUsdModal from './components/modals/GreyUsdModal';
 import PayPalModal from './components/modals/PayPalModal';
 import SuccessModal from './components/modals/SuccessModal';
 import { isCampaignClosed, paymentConfig } from './utils/paymentConfig';
+import useScrollReveal from './hooks/useScrollReveal';
 import './App.css';
 
 function App() {
   const { modals, openModal, closeModal } = useModals();
+  useScrollReveal();
 
   const handlePayPalClick = () => {
     if (isCampaignClosed()) {
