@@ -31,7 +31,11 @@ const Funding = () => {
     percentage: (item.amount / totalGoal) * 100
   }));
 
+<<<<<<< HEAD
   const currentAmount = 12500;
+=======
+  const currentAmount = 1000;
+>>>>>>> 3046d6bb0d2432f7e244340e4438dac430e256fb
   const progressPercentage = (currentAmount / totalGoal) * 100;
 
   return (
